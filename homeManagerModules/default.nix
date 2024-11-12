@@ -6,5 +6,6 @@
     ./dolphin.nix
     ./terminal.nix
     ./neovim.nix
+    ./utilities.nix
   ];
 }

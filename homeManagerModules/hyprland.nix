@@ -39,6 +39,7 @@
         exec-once = [
           "waybar & blueman-applet"
           "hyprctl setcursor macOS 24"
+          "systemctl --user start hyprpolkitagent"
         ];
 
         input = {
