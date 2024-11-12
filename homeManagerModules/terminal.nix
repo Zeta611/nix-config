@@ -87,6 +87,7 @@
       };
       ripgrep.enable = true;
       thefuck.enable = true;
+      fastfetch.enable = true;
     };
 
     services.gpg-agent = {
