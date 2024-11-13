@@ -13,6 +13,7 @@
   config = lib.mkIf config.utilities.enable {
     home.packages = with pkgs; [
       transmission_4-gtk
+      tldr
     ];
   };
 }
