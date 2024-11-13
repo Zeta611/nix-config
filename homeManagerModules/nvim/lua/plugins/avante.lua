@@ -1,13 +1,12 @@
 return {
 	"yetone/avante.nvim",
 	event = "VeryLazy",
-	lazy = false,
+	lazy = true,
 	version = false, -- set this if you want to always pull the latest change
 	opts = {
-		-- add any opts here
 		provider = "claude",
 		claude = {
-			api_key_name = "cmd:op item get anthropic-api-key --fields credential --reveal",
+			api_key_name = "cmd:op read op://Personal/anthropic-api-key/credential",
 		},
 	},
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
