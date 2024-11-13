@@ -52,6 +52,8 @@
     defaultEditor = true;
   };
 
+  security.polkit.enable = true;
+
   services.openssh.enable = true;
   services.printing.enable = true;
 
