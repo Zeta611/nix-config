@@ -94,6 +94,7 @@
       ripgrep.enable = true;
       thefuck.enable = true;
       fastfetch.enable = true;
+      direnv.enable = true;
     };
 
     services.gpg-agent = {
