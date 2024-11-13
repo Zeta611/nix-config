@@ -43,6 +43,11 @@
           la = "eza --icons -a";
           tree = "eza --tree --icons";
         };
+        interactiveShellInit = ''
+          if test -f $XDG_CONFIG_HOME/fish/secrets.fish
+              source $XDG_CONFIG_HOME/fish/secrets.fish
+          end
+        '';
       };
 
       starship = {
