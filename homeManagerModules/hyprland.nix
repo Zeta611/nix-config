@@ -1,4 +1,9 @@
-{ pkgs, lib, config, inputs, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 {
   options = {
@@ -48,28 +53,31 @@
 
         "$mod" = "SUPER";
 
-        bind = [
-          "$mod, T, exec, wezterm start"
-          "$mod, SPACE, exec, fuzzel"
-          "$mod, C, killactive"
-          "$mod, Q, exit"
-          "$mod, F, togglefloating"
+        bind =
+          [
+            "$mod, T, exec, wezterm start"
+            "$mod, SPACE, exec, fuzzel"
+            "$mod, C, killactive"
+            "$mod, Q, exit"
+            "$mod, F, togglefloating"
 
-          "$mod, h, movefocus, l"
-          "$mod, j, movefocus, d"
-          "$mod, k, movefocus, u"
-          "$mod, l, movefocus, r"
-        ] ++ (
-          builtins.concatLists (
-            builtins.genList (i:
-              let ws = i + 1;
-              in [
+            "$mod, h, movefocus, l"
+            "$mod, j, movefocus, d"
+            "$mod, k, movefocus, u"
+            "$mod, l, movefocus, r"
+          ]
+          ++ (builtins.concatLists (
+            builtins.genList (
+              i:
+              let
+                ws = i + 1;
+              in
+              [
                 "$mod, code:1${toString i}, workspace, ${toString ws}"
                 "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
               ]
             ) 9
-          )
-        );
+          ));
 
         bindm = [
           "$mod, mouse:272, movewindow"

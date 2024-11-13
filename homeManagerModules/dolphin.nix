@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 {
   options = {
@@ -14,12 +19,12 @@
       defaultProfile = "default";
       profiles = {
         default = {
-	  command = "fish -l";
+          command = "fish -l";
           font = {
             name = "JetBrains Mono";
             size = 12;
           };
-	};
+        };
       };
     };
     home.packages = with pkgs; [
