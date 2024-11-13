@@ -5,6 +5,10 @@ return {
 	version = false, -- set this if you want to always pull the latest change
 	opts = {
 		-- add any opts here
+		provider = "claude",
+		claude = {
+			api_key_name = "cmd:op item get anthropic-api-key --fields credential --reveal",
+		},
 	},
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
 	build = "make",
