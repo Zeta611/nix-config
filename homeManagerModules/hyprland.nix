@@ -100,6 +100,7 @@
     home.packages = with pkgs; [
       font-awesome
       hyprpolkitagent
+      mpvpaper
       inputs.hyprpanel.packages.${pkgs.system}.default
     ];
   };
