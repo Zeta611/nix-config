@@ -47,6 +47,7 @@
           "1password --silent"
           "hyprctl setcursor macOS 24"
           "systemctl --user start hyprpolkitagent"
+          "mpvpaper '*' ~/Videos/wallpapers/ -o 'shuffle'"
         ];
 
         input = {
