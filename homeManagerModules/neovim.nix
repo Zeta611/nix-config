@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   options = {
@@ -14,12 +19,14 @@
         stylua
         # Telescope
         ripgrep
+        # More
+        nixd
       ];
-  
+
       plugins = with pkgs.vimPlugins; [
         lazy-nvim
       ];
-  
+
       extraLuaConfig =
         let
           plugins = with pkgs.vimPlugins; [
@@ -64,18 +71,46 @@
             vim-illuminate
             vim-startuptime
             which-key-nvim
-            { name = "LuaSnip"; path = luasnip; }
-            { name = "catppuccin"; path = catppuccin-nvim; }
-            { name = "mini.ai"; path = mini-nvim; }
-            { name = "mini.bufremove"; path = mini-nvim; }
-            { name = "mini.comment"; path = mini-nvim; }
-            { name = "mini.indentscope"; path = mini-nvim; }
-            { name = "mini.pairs"; path = mini-nvim; }
-            { name = "mini.surround"; path = mini-nvim; }
+            {
+              name = "LuaSnip";
+              path = luasnip;
+            }
+            {
+              name = "catppuccin";
+              path = catppuccin-nvim;
+            }
+            {
+              name = "mini.ai";
+              path = mini-nvim;
+            }
+            {
+              name = "mini.bufremove";
+              path = mini-nvim;
+            }
+            {
+              name = "mini.comment";
+              path = mini-nvim;
+            }
+            {
+              name = "mini.indentscope";
+              path = mini-nvim;
+            }
+            {
+              name = "mini.pairs";
+              path = mini-nvim;
+            }
+            {
+              name = "mini.surround";
+              path = mini-nvim;
+            }
           ];
-          mkEntryFromDrv = drv:
+          mkEntryFromDrv =
+            drv:
             if lib.isDerivation drv then
-              { name = "${lib.getName drv}"; path = drv; }
+              {
+                name = "${lib.getName drv}";
+                path = drv;
+              }
             else
               drv;
           lazyPath = pkgs.linkFarm "lazy-plugins" (builtins.map mkEntryFromDrv plugins);
@@ -83,7 +118,8 @@
         ''
           require("lazy").setup({
             defaults = {
-              lazy = true,
+              lazy = false,
+              version = false,
             },
             dev = {
               -- reuse files from pkgs.vimPlugins.*
@@ -110,24 +146,46 @@
                 end,
               },
             },
+            performance = {
+              rtp = {
+                -- disable some rtp plugins
+                disabled_plugins = {
+                  "gzip",
+                  -- "matchit",
+                  -- "matchparen",
+                  -- "netrwPlugin",
+                  "tarPlugin",
+                  "tohtml",
+                  "tutor",
+                  "zipPlugin",
+                },
+              },
+            },
           })
         '';
     };
-  
+
     # https://github.com/nvim-treesitter/nvim-treesitter#i-get-query-error-invalid-node-type-at-position
     xdg.configFile."nvim/parser".source =
       let
         parsers = pkgs.symlinkJoin {
           name = "treesitter-parsers";
-          paths = (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: with plugins; [
-            c
-            lua
-          ])).dependencies;
+          paths =
+            (pkgs.vimPlugins.nvim-treesitter.withPlugins (
+              plugins: with plugins; [
+                c
+                lua
+              ]
+            )).dependencies;
         };
       in
       "${parsers}/parser";
-  
+
     # Normal LazyVim config here, see https://github.com/LazyVim/starter/tree/main/lua
-    xdg.configFile."nvim/lua".source = ./lua;
+    xdg.configFile = {
+      "nvim/after".source = ./nvim/after;
+      "nvim/ftdetect".source = ./nvim/ftdetect;
+      "nvim/lua".source = ./nvim/lua;
+    };
   };
 }

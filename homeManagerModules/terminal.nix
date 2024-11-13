@@ -98,6 +98,7 @@
 
     home.packages = with pkgs; [
       jetbrains-mono
+      nixfmt-rfc-style
     ];
 
     xdg.configFile = {
