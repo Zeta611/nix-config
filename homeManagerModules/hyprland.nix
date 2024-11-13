@@ -101,6 +101,7 @@
       font-awesome
       hyprpolkitagent
       mpvpaper
+      hyprpicker
       inputs.hyprpanel.packages.${pkgs.system}.default
     ];
   };
