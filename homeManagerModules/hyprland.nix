@@ -45,6 +45,7 @@
           "waybar & blueman-applet"
           "hyprctl setcursor macOS 24"
           "systemctl --user start hyprpolkitagent"
+          "1password --silent"
         ];
 
         input = {
