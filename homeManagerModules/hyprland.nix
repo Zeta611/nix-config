@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  inputs,
   ...
 }:
 
@@ -25,7 +26,6 @@
         };
       };
     };
-    programs.waybar.enable = true;
     services.mako.enable = true;
 
     wayland.windowManager.hyprland = {
@@ -42,10 +42,11 @@
         monitor = "DP-3, preferred, auto, 1.5";
 
         exec-once = [
-          "waybar & blueman-applet"
+          "hyprpanel"
+          "blueman-applet"
+          "1password --silent"
           "hyprctl setcursor macOS 24"
           "systemctl --user start hyprpolkitagent"
-          "1password --silent"
         ];
 
         input = {
@@ -99,6 +100,7 @@
     home.packages = with pkgs; [
       font-awesome
       hyprpolkitagent
+      inputs.hyprpanel.packages.${pkgs.system}.default
     ];
   };
 }
