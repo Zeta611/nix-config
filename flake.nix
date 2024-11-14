@@ -27,7 +27,7 @@
   };
 
   outputs =
-    { self, nixpkgs, ... }@inputs:
+    { nixpkgs, ... }@inputs:
     {
       nixosConfigurations = {
         default = nixpkgs.lib.nixosSystem {

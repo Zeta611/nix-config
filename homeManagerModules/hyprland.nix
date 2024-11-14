@@ -44,6 +44,7 @@
         exec-once = [
           "hyprpanel"
           "blueman-applet"
+          "fcitx5 -d"
           "1password --silent"
           "hyprctl setcursor macOS 24"
           "systemctl --user start hyprpolkitagent"
