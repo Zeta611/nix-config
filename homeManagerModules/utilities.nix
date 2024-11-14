@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 
@@ -14,6 +15,7 @@
     home.packages = with pkgs; [
       transmission_4-gtk
       tldr
+      inputs.zen-browser.packages."${system}".specific
     ];
   };
 }
