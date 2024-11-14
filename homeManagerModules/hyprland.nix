@@ -40,12 +40,13 @@
         #];
 
         monitor = "DP-3, preferred, auto, 1.5";
+        xwayland.force_zero_scaling = true;
 
         exec-once = [
           "hyprpanel"
           "blueman-applet"
           "fcitx5 -d"
-          "1password --silent"
+          "ELECTRON_OZONE_PLATFORM_HINT=auto 1password --silent"
           "hyprctl setcursor macOS 24"
           "systemctl --user start hyprpolkitagent"
           "mpvpaper '*' ~/Videos/wallpapers/ -o 'shuffle'"
