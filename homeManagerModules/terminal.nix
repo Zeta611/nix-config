@@ -37,6 +37,7 @@
           gl = "git pull";
           gg = "git log";
           cat = "bat -p";
+          lg = "lazygit";
         };
         shellAliases = {
           l = "eza --icons -alh";
