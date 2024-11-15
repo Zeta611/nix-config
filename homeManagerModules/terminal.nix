@@ -23,6 +23,7 @@
         enable = true;
         functions = {
           gi = "curl -sL https://www.gitignore.io/api/$argv";
+          fish_greeting = "fastfetch";
         };
         shellAbbrs = {
           v = "nvim";
