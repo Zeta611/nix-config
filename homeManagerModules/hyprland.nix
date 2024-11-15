@@ -73,7 +73,11 @@
             "$mod, K, movefocus, u"
             "$mod, L, movefocus, r"
 
-            "$mod, TAB, movefocus, r"
+            "$mod, TAB, cyclenext,"
+            "$mod, TAB, bringactivetotop,"
+
+            "$mod SHIFT, TAB, cyclenext,"
+            "$mod SHIFT, TAB, bringactivetotop,"
           ]
           ++ (builtins.concatLists (
             builtins.genList (
