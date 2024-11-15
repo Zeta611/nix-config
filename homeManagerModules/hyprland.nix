@@ -61,15 +61,19 @@
         bind =
           [
             "$mod, T, exec, wezterm start"
+            "$mod, Z, exec, zen"
+            "$mod SHIFT, Z, exec, zen"
             "$mod, SPACE, exec, fuzzel"
+            "$mod, F, togglefloating"
             "$mod, C, killactive"
             "$mod, Q, exit"
-            "$mod, F, togglefloating"
 
-            "$mod, h, movefocus, l"
-            "$mod, j, movefocus, d"
-            "$mod, k, movefocus, u"
-            "$mod, l, movefocus, r"
+            "$mod, H, movefocus, l"
+            "$mod, J, movefocus, d"
+            "$mod, K, movefocus, u"
+            "$mod, L, movefocus, r"
+
+            "$mod, TAB, movefocus, r"
           ]
           ++ (builtins.concatLists (
             builtins.genList (
