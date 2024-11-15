@@ -84,6 +84,12 @@
             ) 9
           ));
 
+        binde = [
+          # For my HHKB, SCROLL_LOCK & PAUSE correspond to macOS's brightness ctl
+          ", SCROLL_LOCK, exec, bright -5"
+          ", PAUSE, exec, bright +5"
+        ];
+
         bindm = [
           "$mod, mouse:272, movewindow"
           "$mod, mouse:273, resizewindow"
@@ -106,6 +112,7 @@
       mpvpaper
       hyprpicker
       inputs.hyprpanel.packages.${pkgs.system}.default
+      (pkgs.writeScriptBin "bright" (builtins.readFile ./bright.fish))
     ];
   };
 }
