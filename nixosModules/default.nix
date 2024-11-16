@@ -7,5 +7,6 @@
     ./pipewire.nix
     ./ddcutil.nix
     ./_1password.nix
+    ./jellyfin.nix
   ];
 }
