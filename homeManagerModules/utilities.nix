@@ -17,6 +17,7 @@
       tldr
       inputs.zen-browser.packages."${system}".specific
       mpv
+      oculante
     ];
 
     xdg.mimeApps = {
@@ -31,6 +32,29 @@
         "application/x-xpinstall" = "zen.desktop";
         "application/pdf" = "zen.desktop";
         "application/json" = "zen.desktop";
+
+        # https://github.com/woelper/oculante/blob/7e04c9282cf30547197ec5ff8a01fac534d369f0/res/oculante.desktop#L11
+        "image/bmp" = "oculante.desktop";
+        "image/gif" = "oculante.desktop";
+        "image/vnd.microsoft.icon" = "oculante.desktop";
+        "image/jpeg" = "oculante.desktop";
+        "image/png" = "oculante.desktop";
+        "image/pnm" = "oculante.desktop";
+        "image/avif" = "oculante.desktop";
+        "image/tiff" = "oculante.desktop";
+        "image/webp" = "oculante.desktop";
+        "image/svg+xml" = "oculante.desktop";
+        "image/exr" = "oculante.desktop";
+        "image/x-dcraw" = "oculante.desktop";
+        "image/x-nikon-nef" = "oculante.desktop";
+        "image/x-canon-cr2" = "oculante.desktop";
+        "image/x-adobe-dng" = "oculante.desktop";
+        "image/x-epson-erf" = "oculante.desktop";
+        "image/x-fuji-raf" = "oculante.desktop";
+        "image/x-sony-arw" = "oculante.desktop";
+        "image/x-sony-srf" = "oculante.desktop";
+        "image/x-sony-sr2" = "oculante.desktop";
+        "image/x-panasonic-raw" = "oculante.desktop";
 
         # https://github.com/mpv-player/mpv/blob/70aaba71d6e3071a732069a1d222d1eb4293faf2/etc/mpv.desktop#L47
         "application/ogg" = "mpv.desktop";
