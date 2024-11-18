@@ -8,5 +8,6 @@
     ./ddcutil.nix
     ./_1password.nix
     ./jellyfin.nix
+    ./samba.nix
   ];
 }
