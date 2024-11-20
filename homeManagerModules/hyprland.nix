@@ -65,6 +65,10 @@
           border_size = 0;
         };
 
+        decoration = {
+          rounding = 10;
+        };
+
         input = {
           natural_scroll = true;
         };
