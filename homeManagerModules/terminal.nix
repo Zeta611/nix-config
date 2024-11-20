@@ -24,6 +24,8 @@
         functions = {
           gi = "curl -sL https://www.gitignore.io/api/$argv";
           fish_greeting = "fastfetch";
+          starship_transient_prompt_func = "starship module character";
+          starship_transient_rprompt_func = "starship module time";
         };
         shellAbbrs = {
           v = "nvim";
@@ -39,6 +41,7 @@
           gg = "git log";
           cat = "bat -p";
           lg = "lazygit";
+          imgcat = "wezterm imgcat";
         };
         shellAliases = {
           l = "eza --icons -alh";
@@ -54,6 +57,17 @@
 
       starship = {
         enable = true;
+        enableTransience = true;
+        settings = {
+          format = "$all$time$line_break$jobs$battery$status$shell$character";
+          character = {
+            success_symbol = "[𝝺](bold green)";
+            error_symbol = "[𝝮](bold red)";
+          };
+          time = {
+            disabled = false;
+          };
+        };
       };
 
       git = {

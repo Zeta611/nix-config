@@ -15,6 +15,13 @@
     programs.fuzzel = {
       enable = true;
       settings = {
+        main = {
+          font = "Noto Sans CJK KR:size=24";
+          use-bold = true;
+          prompt = "𝝺 ";
+          width = 40;
+          tabs = 4;
+        };
         colors = {
           background = "d0d5e3ff";
           text = "3760bfff";
@@ -49,7 +56,7 @@
           "ELECTRON_OZONE_PLATFORM_HINT=auto 1password --silent"
           "hyprctl setcursor macOS 24"
           "systemctl --user start hyprpolkitagent"
-          "mpvpaper '*' ~/Videos/wallpapers/ -o 'shuffle'"
+          "mpvpaper -p '*' ~/Videos/wallpapers/ -o 'no-audio shuffle loop-playlist'"
         ];
 
         general = {
@@ -68,22 +75,31 @@
           [
             "$mod, T, exec, wezterm start"
             "$mod, Z, exec, zen"
-            "$mod SHIFT, Z, exec, zen"
+            "$mod SHIFT, Z, exec, zen --private-window"
             "$mod, SPACE, exec, fuzzel"
-            "$mod, F, togglefloating"
+
             "$mod, C, killactive"
             "$mod, Q, exit"
+
+            "$mod SHIFT, F, fullscreen"
+            "$mod, F, togglefloating"
+            "$mod SHIFT, C, centerwindow"
 
             "$mod, H, movefocus, l"
             "$mod, J, movefocus, d"
             "$mod, K, movefocus, u"
             "$mod, L, movefocus, r"
+            "$mod SHIFT, H, movewindoworgroup, l"
+            "$mod SHIFT, J, movewindoworgroup, d"
+            "$mod SHIFT, K, movewindoworgroup, u"
+            "$mod SHIFT, L, movewindoworgroup, r"
 
-            "$mod, TAB, cyclenext,"
-            "$mod, TAB, bringactivetotop,"
+            "$mod, code:47, togglegroup"
+            "$mod CONTROL, J, changegroupactive, f"
+            "$mod CONTROL, K, changegroupactive, b"
 
-            "$mod SHIFT, TAB, cyclenext,"
-            "$mod SHIFT, TAB, bringactivetotop,"
+            "$mod, TAB, workspace, +1"
+            "$mod SHIFT, TAB, workspace, -1"
           ]
           ++ (builtins.concatLists (
             builtins.genList (
@@ -92,16 +108,21 @@
                 ws = i + 1;
               in
               [
+                # code:10=`1` -- code:19=`0`
                 "$mod, code:1${toString i}, workspace, ${toString ws}"
                 "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
               ]
             ) 9
           ));
 
-        binde = [
+        bindel = [
           # For my HHKB, SCROLL_LOCK & PAUSE correspond to macOS's brightness ctl
           ", SCROLL_LOCK, exec, bright -5"
           ", PAUSE, exec, bright +5"
+
+          ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+          ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+          ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         ];
 
         bindm = [
