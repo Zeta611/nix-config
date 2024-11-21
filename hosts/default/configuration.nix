@@ -48,6 +48,10 @@
     enable = true;
     username = "jay";
   };
+  sabnzbd = {
+    enable = true;
+    username = "jay";
+  };
   ddcutil.enable = true;
   samba.enable = true;
 
