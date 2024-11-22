@@ -37,6 +37,7 @@
   hyprland.enable = true;
   dolphin.enable = true;
   neovim.enable = true;
+  libreoffice.enable = true;
   utilities.enable = true;
   programs = {
     firefox.enable = true;
