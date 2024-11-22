@@ -43,6 +43,7 @@
   bluetooth.enable = true;
   hardware.graphics.enable = true;
   nvidia.enable = true;
+  solaar.enable = true;
   _1password.enable = true;
   jellyfin = {
     enable = true;

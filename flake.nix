@@ -25,6 +25,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    solaar = {
+      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
@@ -37,6 +42,7 @@
             inherit inputs;
           };
           modules = [
+            inputs.solaar.nixosModules.default
             ./hosts/default/configuration.nix
             ./nixosModules
           ];
