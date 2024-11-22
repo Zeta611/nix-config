@@ -7,6 +7,7 @@
     ./terminal.nix
     ./neovim.nix
     ./libreoffice.nix
+    ./rclone.nix
     ./utilities.nix
   ];
 }
