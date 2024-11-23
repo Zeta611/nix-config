@@ -11,5 +11,6 @@
     ./jellyfin.nix
     ./sabnzbd.nix
     ./samba.nix
+    ./avahi.nix
   ];
 }
