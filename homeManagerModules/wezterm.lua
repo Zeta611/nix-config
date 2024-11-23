@@ -4,6 +4,8 @@ local act = wezterm.action
 return {
 	default_prog = { "fish", "-l" },
 	color_scheme = "tokyonight_day",
+	scrollback_lines = 1048576,
+	enable_scroll_bar = true,
 	keys = {
 		{ key = "1", mods = "CTRL", action = act.ActivateTab(0) },
 		{ key = "2", mods = "CTRL", action = act.ActivateTab(1) },
