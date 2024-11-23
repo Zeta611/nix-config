@@ -81,6 +81,7 @@
             "$mod, T, exec, wezterm start"
             "$mod, Z, exec, zen"
             "$mod SHIFT, Z, exec, zen --private-window"
+            "$mod, J, exec, jellyfinmediaplayer --disable-gpu"
             "$mod, SPACE, exec, fuzzel"
 
             "$mod, C, killactive"
