@@ -18,6 +18,7 @@
       inputs.zen-browser.packages."${system}".specific
       mpv
       oculante
+      clipboard-jh
     ];
 
     xdg.mimeApps = {

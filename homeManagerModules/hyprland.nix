@@ -57,6 +57,7 @@
           "hyprctl setcursor macOS 24"
           "systemctl --user start hyprpolkitagent"
           "mpvpaper -p '*' ~/Videos/wallpapers/ -o 'no-audio shuffle loop-playlist'"
+          "cb"
         ];
 
         general = {
