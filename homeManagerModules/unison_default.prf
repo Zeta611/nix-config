@@ -1,0 +1,10 @@
+path = Desktop
+path = Documents
+
+mountpoint = Desktop
+mountpoint = Documents
+
+fat = true
+
+ignore = Name ._*
+ignore = Name .DS_Store

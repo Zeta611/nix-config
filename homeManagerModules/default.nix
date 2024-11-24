@@ -8,6 +8,7 @@
     ./neovim.nix
     ./libreoffice.nix
     ./rclone.nix
+    ./unison.nix
     ./utilities.nix
   ];
 }

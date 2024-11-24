@@ -39,6 +39,7 @@
   neovim.enable = true;
   libreoffice.enable = true;
   rclone.enable = true;
+  unison.enable = true;
   utilities.enable = true;
   programs = {
     firefox.enable = true;
