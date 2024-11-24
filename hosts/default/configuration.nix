@@ -55,6 +55,7 @@
   };
   ddcutil.enable = true;
   samba.enable = true;
+  diskutils.enable = true;
   avahi.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -12,5 +12,6 @@
     ./sabnzbd.nix
     ./samba.nix
     ./avahi.nix
+    ./diskutils.nix
   ];
 }
