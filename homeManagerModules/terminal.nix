@@ -23,6 +23,7 @@
         enable = true;
         functions = {
           gi = "curl -sL https://www.gitignore.io/api/$argv";
+          zl = "z $argv && eza --icons -alh";
           fish_greeting = "fastfetch";
           starship_transient_prompt_func = "starship module character";
           starship_transient_rprompt_func = "starship module time";
