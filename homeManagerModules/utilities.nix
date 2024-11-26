@@ -17,6 +17,8 @@
       tldr
       inputs.zen-browser.packages."${system}".specific
       mpv
+      clang
+      deno
       oculante
       clipboard-jh
       jellyfin-media-player
