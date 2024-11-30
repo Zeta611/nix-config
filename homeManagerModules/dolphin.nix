@@ -27,13 +27,20 @@
         };
       };
     };
-    home.packages = with pkgs; [
-      kdePackages.kio
-      kdePackages.kio-extras
-      kdePackages.breeze-icons
-      kdePackages.dolphin-plugins
-      dolphin
-      konsole
-    ];
+    # I need to manually place this... (copied from the version `libsForQt5.kservice`)
+    xdg.configFile."menus/applications.menu".text = builtins.readFile ./applications.menu;
+    home.packages =
+      with pkgs;
+      (with kdePackages; [
+        kio
+        kio-extras
+        breeze-icons
+        qtsvg # for icons
+        ffmpegthumbs # for previews
+        dolphin
+        konsole
+        kservice # for applications list
+        shared-mime-info
+      ]);
   };
 }

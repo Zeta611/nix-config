@@ -39,13 +39,6 @@
       enable = true;
       xwayland.enable = true;
       settings = {
-        #env = [
-        #  "XCURSOR_THEME,macOS"
-        #  "XCURSOR_SIZE,200"
-        #  "QT_CURSOR_THEME,macOS"
-        #  "QT_CURSOR_SIZE,200"
-        #];
-
         monitor = "DP-3, preferred, auto, 1.5";
         xwayland.force_zero_scaling = true;
 
