@@ -20,7 +20,8 @@
       clang
       deno
       oculante
-      clipboard-jh
+      wl-clipboard
+      cliphist
       jellyfin-media-player
     ];
 

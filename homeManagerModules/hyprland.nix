@@ -50,7 +50,7 @@
           "hyprctl setcursor macOS 24"
           "systemctl --user start hyprpolkitagent"
           "mpvpaper -p '*' ~/Videos/wallpapers/ -o 'no-audio shuffle loop-playlist'"
-          "cb"
+          "wl-paste --type text --watch cliphist store"
         ];
 
         general = {
@@ -73,6 +73,8 @@
           [
             "$mod, T, exec, wezterm start"
             "$mod, Z, exec, zen"
+            "$mod, D, exec, dolphin"
+            "$mod, V, exec, cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"
             "$mod SHIFT, Z, exec, zen --private-window"
             "$mod, J, exec, jellyfinmediaplayer --disable-gpu"
             "$mod, SPACE, exec, fuzzel"
