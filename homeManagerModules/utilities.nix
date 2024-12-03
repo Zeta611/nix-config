@@ -16,6 +16,7 @@
       transmission_4-gtk
       tldr
       inputs.zen-browser.packages."${system}".specific
+      chromium
       mpv
       clang
       deno
