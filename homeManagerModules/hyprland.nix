@@ -120,6 +120,8 @@
           # For my HHKB, SCROLL_LOCK & PAUSE correspond to macOS's brightness ctl
           ", SCROLL_LOCK, exec, bright -5"
           ", PAUSE, exec, bright +5"
+          ", XF86MonBrightnessDown, exec, bright -5"
+          ", XF86MonBrightnessUp, exec, bright +5"
 
           ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
           ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
