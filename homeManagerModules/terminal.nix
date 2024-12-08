@@ -132,7 +132,10 @@
       ripgrep.enable = true;
       thefuck.enable = true;
       fastfetch.enable = true;
-      direnv.enable = true;
+      direnv = {
+        enable = true;
+        nix-direnv.enable = true;
+      };
     };
 
     services.gpg-agent = {
