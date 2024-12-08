@@ -14,13 +14,11 @@
     programs.neovim = {
       enable = true;
       extraPackages = with pkgs; [
-        # LazyVim
         lua-language-server
         stylua
-        # Telescope
         ripgrep
-        # More
         nixd
+        ocamlPackages.ocaml-lsp
       ];
 
       plugins = with pkgs.vimPlugins; [
