@@ -49,6 +49,7 @@
         inherit (tpkgs) scheme-full;
       };
     };
+    zathura.enable = true;
   };
 
   home.packages = with pkgs; [
