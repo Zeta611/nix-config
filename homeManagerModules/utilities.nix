@@ -28,7 +28,7 @@
 
     xdg.desktopEntries."com.github.iwalton3.jellyfin-media-player" = {
       name = "Jellyfin Media Player";
-      exec = "jellyfinmediaplayer --disable-gpu";
+      exec = "jellyfinmediaplayer --platform=xcb --scale-factor=1.5";
       icon = "com.github.iwalton3.jellyfin-media-player";
       terminal = false;
       type = "Application";

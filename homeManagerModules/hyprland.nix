@@ -76,7 +76,6 @@
             "$mod, D, exec, dolphin"
             "$mod, V, exec, cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"
             "$mod SHIFT, Z, exec, zen --private-window"
-            "$mod, J, exec, jellyfinmediaplayer --disable-gpu"
             "$mod, SPACE, exec, fuzzel"
 
             "$mod, C, killactive"
