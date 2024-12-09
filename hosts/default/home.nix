@@ -43,6 +43,12 @@
   utilities.enable = true;
   programs = {
     firefox.enable = true;
+    texlive = {
+      enable = true;
+      extraPackages = tpkgs: {
+        inherit (tpkgs) scheme-full;
+      };
+    };
   };
 
   home.packages = with pkgs; [
