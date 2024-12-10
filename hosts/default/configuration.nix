@@ -78,6 +78,8 @@
 
   pipewire.enable = true;
 
+  uxplay.enable = true;
+
   services.greetd = {
     enable = true;
     settings = {
