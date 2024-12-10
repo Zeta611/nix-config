@@ -63,7 +63,6 @@
         default = ./homeManagerModules;
       };
 
-      # $ darwin-rebuild build --flake .
       darwinConfigurations = {
         "jay-macbook" = nix-darwin.lib.darwinSystem {
           specialArgs = {
