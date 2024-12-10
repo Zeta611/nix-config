@@ -1,8 +1,13 @@
 {
-  description = "NixOS config flake";
+  description = "Nix config flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -34,7 +39,13 @@
   };
 
   outputs =
-    { nixpkgs, ... }@inputs:
+    {
+      self,
+      nixpkgs,
+      nix-darwin,
+      solaar,
+      ...
+    }@inputs:
     {
       nixosConfigurations = {
         default = nixpkgs.lib.nixosSystem {
@@ -42,7 +53,7 @@
             inherit inputs;
           };
           modules = [
-            inputs.solaar.nixosModules.default
+            solaar.nixosModules.default
             ./hosts/default/configuration.nix
             ./nixosModules
           ];
@@ -51,5 +62,18 @@
       homeManagerModules = {
         default = ./homeManagerModules;
       };
+
+      # $ darwin-rebuild build --flake .
+      darwinConfigurations = {
+        "jay-macbook" = nix-darwin.lib.darwinSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [ ./hosts/jay-macbook-pro/configuration.nix ];
+        };
+      };
+
+      # Expose the package set, including overlays, for convenience.
+      darwinPackages = self.darwinConfigurations."jay-macbook".pkgs;
     };
 }
