@@ -2,7 +2,6 @@
   pkgs,
   lib,
   config,
-  inputs,
   ...
 }:
 
@@ -12,27 +11,86 @@
   };
 
   config = lib.mkIf config.hyprland.enable {
-    programs.fuzzel = {
-      enable = true;
-      settings = {
-        main = {
-          font = "Noto Sans CJK KR:size=24";
-          use-bold = true;
-          prompt = "𝝺 ";
-          width = 40;
-          tabs = 4;
-        };
-        colors = {
-          background = "d0d5e3ff";
-          text = "3760bfff";
-          match = "188092ff";
-          selection = "b3b8d1ff";
-          selection-match = "188092ff";
-          selection-text = "3760bfff";
-          border = "4094a3ff";
+    programs = {
+      fuzzel = {
+        enable = true;
+        settings = {
+          main = {
+            font = "Noto Sans CJK KR:size=24";
+            use-bold = true;
+            prompt = "𝝺 ";
+            width = 40;
+            tabs = 4;
+          };
+          colors = {
+            background = "d0d5e3ff";
+            text = "3760bfff";
+            match = "188092ff";
+            selection = "b3b8d1ff";
+            selection-match = "188092ff";
+            selection-text = "3760bfff";
+            border = "4094a3ff";
+          };
         };
       };
+      waybar = {
+        enable = true;
+        settings = {
+          mainBar = {
+            "modules-left" = [ "hyprland/workspaces" ];
+            "modules-center" = [
+              "clock"
+              "idle_inhibitor"
+            ];
+            "modules-right" = [
+              "tray"
+              "pulseaudio"
+            ];
+            "network" = {
+              "format-wifi" = "{essid} ({signalStrength}%) ";
+              "format-ethernet" = "{ifname} ";
+              "format-disconnected" = "";
+              "max-length" = 50;
+            };
+            "idle_inhibitor" = {
+              "format" = "{icon}";
+              "format-icons" = {
+                "activated" = "";
+                "deactivated" = "";
+              };
+            };
+            "tray" = {
+              "icon-size" = 15;
+              "spacing" = 10;
+            };
+            "pulseaudio" = {
+              "format" = "{volume}% {icon} ";
+              "format-bluetooth" = "{volume}% {icon} {format_source}";
+              "format-bluetooth-muted" = " {icon} {format_source}";
+              "format-muted" = "0% {icon} ";
+              "format-source" = "{volume}% ";
+              "format-source-muted" = "";
+              "format-icons" = {
+                "headphone" = "";
+                "hands-free" = "";
+                "headset" = "";
+                "phone" = "";
+                "portable" = "";
+                "car" = "";
+                "default" = [
+                  ""
+                  ""
+                  ""
+                ];
+              };
+              "on-click" = "pavucontrol";
+            };
+          };
+        };
+        style = ./waybar.css;
+      };
     };
+
     services.mako.enable = true;
 
     wayland.windowManager.hyprland = {
@@ -43,7 +101,7 @@
         xwayland.force_zero_scaling = true;
 
         exec-once = [
-          "hyprpanel"
+          "waybar"
           "blueman-applet"
           "fcitx5 -d"
           "ELECTRON_OZONE_PLATFORM_HINT=auto 1password --silent"
@@ -152,7 +210,6 @@
       hyprpolkitagent
       mpvpaper
       hyprpicker
-      inputs.hyprpanel.packages.${pkgs.system}.default
     ];
   };
 }
