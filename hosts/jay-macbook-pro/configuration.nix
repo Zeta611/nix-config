@@ -24,6 +24,8 @@
 
   programs.fish.enable = true;
 
+  security.pam.enableSudoTouchIdAuth = true;
+
   users.users.jay = {
     home = "/Users/jay";
   };
