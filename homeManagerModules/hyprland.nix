@@ -33,6 +33,7 @@
           };
         };
       };
+
       waybar = {
         enable = true;
         settings = {
@@ -91,7 +92,21 @@
       };
     };
 
-    services.mako.enable = true;
+    services = {
+      mako.enable = true;
+      hypridle = {
+        enable = true;
+        settings = {
+          listener = [
+            {
+              timeout = 330;
+              on-timeout = "hyprctl dispatch dpms off";
+              on-resume = "hyprctl dispatch dpms on";
+            }
+          ];
+        };
+      };
+    };
 
     wayland.windowManager.hyprland = {
       enable = true;
