@@ -3,7 +3,7 @@ local act = wezterm.action
 
 return {
 	default_prog = { "/run/current-system/sw/bin/fish", "-l" },
-	font_size = 12.0,
+	font_size = 15.0,
 	color_scheme = "tokyonight_day",
 	window_decorations = "INTEGRATED_BUTTONS|RESIZE",
 	scrollback_lines = 1048576,
