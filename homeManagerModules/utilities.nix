@@ -24,6 +24,7 @@
       wl-clipboard
       cliphist
       jellyfin-media-player
+      zotero_7
     ];
 
     xdg.desktopEntries."com.github.iwalton3.jellyfin-media-player" = {
