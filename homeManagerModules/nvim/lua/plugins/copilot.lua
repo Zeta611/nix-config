@@ -1,6 +1,3 @@
-if true then
-	return {}
-end
 return {
 	-- https://github.com/zbirenbaum/copilot.lua
 	"zbirenbaum/copilot.lua",

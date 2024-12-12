@@ -19,6 +19,7 @@
         ripgrep
         nixd
         ocamlPackages.ocaml-lsp
+        nodejs
       ];
 
       plugins = with pkgs.vimPlugins; [
