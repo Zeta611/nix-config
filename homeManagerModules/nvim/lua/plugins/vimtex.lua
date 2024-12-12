@@ -10,5 +10,8 @@ return {
 			vim.g.vimtex_view_general_options =
 				[[ -x "nvim --headless -c \"VimtexInverseSearch %{line}:%{column} '%{input}'\"" --synctex-forward @line:@col:'@tex' '@pdf' ]]
 		end
+
+		vim.g.vimtex_quickfix_ignore_filters = { "LaTeX Font Warning: Size substitutions" }
+		vim.g.vimtex_quickfix_autoclose_after_keystrokes = 1
 	end,
 }
