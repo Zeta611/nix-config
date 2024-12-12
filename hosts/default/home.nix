@@ -41,6 +41,7 @@
   rclone.enable = true;
   unison.enable = true;
   utilities.enable = true;
+  thunderbird.enable = true;
   programs = {
     firefox.enable = true;
     texlive = {

@@ -10,5 +10,6 @@
     ./rclone.nix
     ./unison.nix
     ./utilities.nix
+    ./thunderbird.nix
   ];
 }
