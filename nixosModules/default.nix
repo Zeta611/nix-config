@@ -10,6 +10,7 @@
     ./_1password.nix
     ./jellyfin.nix
     ./sabnzbd.nix
+    ./servarr.nix
     ./samba.nix
     ./uxplay.nix
     ./avahi.nix

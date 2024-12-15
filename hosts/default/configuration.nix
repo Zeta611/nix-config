@@ -34,6 +34,12 @@
   ];
   nixpkgs.config.allowUnfree = true;
 
+  # WARNING: This is temporary
+  nixpkgs.config.permittedInsecurePackages = [
+    "dotnet-sdk-6.0.428"
+    "aspnetcore-runtime-6.0.36"
+  ];
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -50,6 +56,10 @@
     username = "jay";
   };
   sabnzbd = {
+    enable = true;
+    username = "jay";
+  };
+  servarr = {
     enable = true;
     username = "jay";
   };
