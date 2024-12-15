@@ -23,26 +23,32 @@
       oculante
       wl-clipboard
       cliphist
-      jellyfin-media-player
+      jellyfin-mpv-shim
       zotero_7
     ];
 
-    xdg.desktopEntries."com.github.iwalton3.jellyfin-media-player" = {
-      name = "Jellyfin Media Player";
-      exec = "jellyfinmediaplayer --platform=xcb --scale-factor=1.5";
-      icon = "com.github.iwalton3.jellyfin-media-player";
-      terminal = false;
-      type = "Application";
-      categories = [
-        "AudioVideo"
-        "Video"
-        "Player"
-        "TV"
-      ];
-      settings = {
-        StartupWMClass = "com.github.iwalton3.jellyfin-media-player";
-      };
+    xdg.configFile = {
+      "mpv/mpv.conf".text = ''
+        vo=gpu-next
+      '';
     };
+
+    # xdg.desktopEntries."com.github.iwalton3.jellyfin-media-player" = {
+    #   name = "Jellyfin Media Player";
+    #   exec = "jellyfinmediaplayer --platform=xcb --scale-factor=1.5";
+    #   icon = "com.github.iwalton3.jellyfin-media-player";
+    #   terminal = false;
+    #   type = "Application";
+    #   categories = [
+    #     "AudioVideo"
+    #     "Video"
+    #     "Player"
+    #     "TV"
+    #   ];
+    #   settings = {
+    #     StartupWMClass = "com.github.iwalton3.jellyfin-media-player";
+    #   };
+    # };
 
     xdg.mimeApps = {
       enable = true;
