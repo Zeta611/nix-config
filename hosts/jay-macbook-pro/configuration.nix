@@ -47,6 +47,7 @@
     ];
   };
 
+  system.defaults.NSGlobalDomain.NSWindowShouldDragOnGesture = true;
 
   # Set Git commit hash for darwin-version.
   system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
