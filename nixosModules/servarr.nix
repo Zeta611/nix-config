@@ -32,6 +32,11 @@
       transmission = {
         enable = true;
         openFirewall = true;
+        user = config.servarr.username;
+        settings = {
+          download-dir = "/data/torrents/";
+          incomplete-dir = "/data/torrents/incomplete/";
+        };
       };
     };
   };
