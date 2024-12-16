@@ -31,5 +31,10 @@
     };
   };
 
+  home.file."./.config/sketchybar/" = {
+    source = ./sketchybar-config;
+    recursive = true;
+  };
+
   programs.home-manager.enable = true;
 }

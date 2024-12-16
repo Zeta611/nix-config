@@ -39,6 +39,15 @@
     };
   };
 
+  services.sketchybar = {
+    enable = true;
+    package = pkgs.sketchybar;
+    extraPackages = [
+      pkgs.lua5_4_compat
+    ];
+  };
+
+
   # Set Git commit hash for darwin-version.
   system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
 
