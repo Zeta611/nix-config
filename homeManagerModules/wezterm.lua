@@ -1,15 +1,22 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
+local hostname = wezterm.hostname()
 
-local function get_home_dir()
-	return os.getenv("HOME")
+local font_size
+local window_decorations
+if hostname == "jay-nixos" then
+	font_size = 12.0
+	window_decorations = "NONE"
+else
+	font_size = 15.0
+	window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 end
 
 return {
-	default_prog = { get_home_dir() .. "/.nix-profile/bin/fish", "-l" },
-	font_size = 15.0,
+	default_prog = { wezterm.home_dir .. "/.nix-profile/bin/fish", "-l" },
+	font_size = font_size,
+	window_decorations = window_decorations,
 	color_scheme = "tokyonight_day",
-	window_decorations = "INTEGRATED_BUTTONS|RESIZE",
 	scrollback_lines = 1048576,
 	enable_scroll_bar = true,
 	keys = {
