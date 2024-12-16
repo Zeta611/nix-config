@@ -21,6 +21,8 @@ return {
 	window_decorations = window_decorations,
 	use_fancy_tab_bar = false,
 	color_scheme = "tokyonight_day",
+	use_fancy_tab_bar = false,
+	hide_tab_bar_if_only_one_tab = true,
 	scrollback_lines = 1048576,
 	enable_scroll_bar = true,
 	keys = {
