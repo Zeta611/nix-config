@@ -1,0 +1,1 @@
+# ❄️ NixOS & nix-darwin configuration
