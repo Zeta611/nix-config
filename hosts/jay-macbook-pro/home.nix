@@ -20,21 +20,16 @@
   nixpkgs.config.allowUnfree = true;
 
   imports = [
-    # inputs.self.outputs.homeManagerModules.default
+    inputs.self.outputs.homeManagerModules.common
   ];
-
-  programs = {
-    wezterm = {
-      enable = true;
-      package = inputs.wezterm.packages.${pkgs.system}.default;
-      extraConfig = builtins.readFile ./wezterm.lua;
-    };
-  };
+  terminal.enable = true;
 
   home.file."./.config/sketchybar/" = {
     source = ./sketchybar-config;
     recursive = true;
   };
+
+  xdg.enable = true;
 
   programs.home-manager.enable = true;
 }

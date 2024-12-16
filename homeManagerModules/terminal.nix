@@ -18,7 +18,6 @@
         package = inputs.wezterm.packages.${pkgs.system}.default;
         extraConfig = builtins.readFile ./wezterm.lua;
       };
-
       fish = {
         enable = true;
         functions = {
@@ -49,6 +48,14 @@
           la = "eza --icons -a";
           tree = "eza --tree --icons";
         };
+        shellInit = ''
+          fish_config theme choose tokyonight_day
+
+          if test -d /opt/homebrew
+            fish_add_path -a /opt/homebrew/bin
+            fish_add_path -a /opt/homebrew/sbin
+          end
+        '';
         interactiveShellInit = ''
           if test -f $XDG_CONFIG_HOME/fish/secrets.fish
               source $XDG_CONFIG_HOME/fish/secrets.fish
@@ -71,18 +78,7 @@
         };
       };
 
-      git = {
-        enable = true;
-        userName = "Jay Lee";
-        userEmail = "jaeho.lee@snu.ac.kr";
-        extraConfig = {
-          commit.gpgsign = true;
-          user.signingkey = "630C65D0299CF2D6!";
-          init.defaultBranch = "main";
-        };
-      };
       lazygit.enable = true;
-      gpg.enable = true;
       eza.enable = true;
 
       zoxide.enable = true;
@@ -136,12 +132,6 @@
         enable = true;
         nix-direnv.enable = true;
       };
-    };
-
-    services.gpg-agent = {
-      enable = true;
-      enableSshSupport = true;
-      pinentryPackage = pkgs.pinentry-gnome3;
     };
 
     home.packages = with pkgs; [

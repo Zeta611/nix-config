@@ -22,13 +22,15 @@
     "flakes"
   ];
 
-  programs.fish.enable = true;
-
   security.pam.enableSudoTouchIdAuth = true;
 
   users.users.jay = {
     home = "/Users/jay";
   };
+
+  # This is required for the fish shell to work properly via nix-darwin
+  # https://github.com/LnL7/nix-darwin/issues/122#issuecomment-1786729187
+  programs.fish.enable = true;
 
   home-manager = {
     extraSpecialArgs = {

@@ -1,9 +1,15 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 
+local function get_home_dir()
+	return os.getenv("HOME")
+end
+
 return {
-	default_prog = { "fish", "-l" },
+	default_prog = { get_home_dir() .. "/.nix-profile/bin/fish", "-l" },
+	font_size = 15.0,
 	color_scheme = "tokyonight_day",
+	window_decorations = "INTEGRATED_BUTTONS|RESIZE",
 	scrollback_lines = 1048576,
 	enable_scroll_bar = true,
 	keys = {

@@ -1,5 +1,5 @@
 {
-  description = "Nix config flake";
+  description = "NixOS & nix-darwin configuration";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -44,9 +44,7 @@
     {
       nixosConfigurations = {
         default = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-          };
+          specialArgs = { inherit inputs; };
           modules = [
             solaar.nixosModules.default
             ./hosts/default/configuration.nix
@@ -55,14 +53,13 @@
         };
       };
       homeManagerModules = {
+        common = ./homeManagerModules/common.nix;
         default = ./homeManagerModules;
       };
 
       darwinConfigurations = {
         "jay-macbook" = nix-darwin.lib.darwinSystem {
-          specialArgs = {
-            inherit inputs;
-          };
+          specialArgs = { inherit inputs; };
           modules = [ ./hosts/jay-macbook-pro/configuration.nix ];
         };
       };
