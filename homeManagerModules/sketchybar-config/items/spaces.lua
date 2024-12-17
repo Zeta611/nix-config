@@ -1,69 +1,98 @@
 local colors = require("colors")
 
-local function mouse_click(env)
-	if env.BUTTON == "right" then
-		sbar.exec("yabai -m space --destroy " .. env.SID)
-	else
-		sbar.exec("yabai -m space --focus " .. env.SID)
+local aerospace = "/opt/homebrew/bin/aerospace"
+local wss_cmd = aerospace .. " list-workspaces --monitor focused"
+local nonempty_wss_cmd = aerospace .. " list-workspaces --monitor focused --empty no"
+local focused_ws_cmd = aerospace .. " list-workspaces --focused"
+
+local function string_to_table(s)
+	local result = {}
+	for line in s:gmatch("([^\n]+)") do
+		table.insert(result, line)
+	end
+	return result
+end
+
+local function contains(tab, val)
+	for _, v in ipairs(tab) do
+		if v == val then
+			return true
+		end
+	end
+	return false
+end
+
+local function with_nonempty_wss(callback)
+	sbar.exec(nonempty_wss_cmd, function(nonempty_wss_str)
+		local nonempty_wss = string_to_table(nonempty_wss_str)
+		callback(nonempty_wss)
+	end)
+end
+
+local wss_items = {}
+
+local function initialize_wss(wss, nonempty_wss, focused_ws)
+	for _, ws in ipairs(wss) do
+		local selected = ws == focused_ws
+		local nonempty = contains(nonempty_wss, ws)
+
+		local space = sbar.add("item", "space." .. ws, {
+			position = "left",
+			icon = {
+				string = ws,
+				padding_left = 2,
+				padding_right = 2,
+				color = colors.white,
+				highlight_color = colors.red,
+				highlight = selected,
+				drawing = nonempty or selected,
+			},
+			label = {
+				drawing = nonempty or selected,
+			},
+			padding_left = 0,
+			padding_right = 0,
+			click_script = aerospace .. " workspace " .. ws,
+		})
+		wss_items[ws] = space
 	end
 end
 
-local function space_selection(env)
-	local color = env.SELECTED == "true" and colors.white or colors.bg2
-
-	sbar.set(env.NAME, {
-		icon = { highlight = env.SELECTED },
-		label = { highlight = env.SELECTED },
-		background = { border_color = color },
-	})
-end
-
-local spaces = {}
-for i = 1, 10, 1 do
-	local space = sbar.add("space", {
-		associated_space = i,
-		icon = {
-			string = i,
-			padding_left = 10,
-			padding_right = 10,
-			color = colors.white,
-			highlight_color = colors.red,
-		},
-		padding_left = 2,
-		padding_right = 2,
-		label = {
-			padding_right = 20,
-			color = colors.grey,
-			highlight_color = colors.white,
-			font = "sketchybar-app-font:Regular:16.0",
-			y_offset = -1,
-			drawing = false,
-		},
-	})
-
-	spaces[i] = space.name
-	space:subscribe("space_change", space_selection)
-	space:subscribe("mouse.clicked", mouse_click)
-end
-
-sbar.add("bracket", spaces, {
-	background = { color = colors.bg1, border_color = colors.bg2 },
+-- Adding `with_nonempty_wss` to each item is expensive, so we'll add a sentinel
+-- item solely for the purpose of subscribing to `aerospace_workspace_change`
+-- and updating the workspace items inside the `with_nonempty_wss` callback.
+local sentinel = sbar.add("item", {
+	position = "left",
+	padding_left = 0,
+	padding_right = 0,
+	width = 0,
 })
+sentinel:subscribe("aerospace_workspace_change", function(env)
+	with_nonempty_wss(function(nonempty_wss)
+		for ws, item in pairs(wss_items) do
+			local selected = env.FOCUSED_WORKSPACE == ws
+			local nonempty = contains(nonempty_wss, ws)
+			item:set({
+				icon = {
+					highlight = selected,
+					drawing = nonempty or selected,
+				},
+				label = {
+					drawing = nonempty or selected,
+				},
+			})
+		end
+	end)
+end)
 
-local space_creator = sbar.add("item", {
-	padding_left = 10,
-	padding_right = 8,
-	icon = {
-		string = "􀆊",
-		font = {
-			style = "Heavy",
-			size = 16.0,
-		},
-	},
-	label = { drawing = false },
-	associated_display = "active",
-})
-
-space_creator:subscribe("mouse.clicked", function(_)
-	sbar.exec("yabai -m space --create")
+sbar.exec(wss_cmd, function(wss_str)
+	local wss = string_to_table(wss_str)
+	sbar.exec(nonempty_wss_cmd, function(nonempty_wss_str)
+		local nonempty_wss = string_to_table(nonempty_wss_str)
+		sbar.exec(focused_ws_cmd, function(focused_ws_str)
+			local focused_ws = string_to_table(focused_ws_str)[1]
+			initialize_wss(wss, nonempty_wss, focused_ws)
+			sbar.exec("sketchybar --move front_app after space." .. #wss)
+		end)
+	end)
 end)
