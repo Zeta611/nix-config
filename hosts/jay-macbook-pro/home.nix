@@ -20,7 +20,7 @@
   nixpkgs.config.allowUnfree = true;
 
   imports = [
-    inputs.self.outputs.homeManagerModules.common
+    inputs.self.outputs.homeManagerModules.darwin
   ];
   terminal.enable = true;
 
