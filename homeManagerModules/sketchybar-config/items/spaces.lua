@@ -29,10 +29,11 @@ local function with_nonempty_wss(callback)
 	end)
 end
 
+local spaces = {}
 local wss_items = {}
 
 local function initialize_wss(wss, nonempty_wss, focused_ws)
-	for _, ws in ipairs(wss) do
+	for i, ws in ipairs(wss) do
 		local selected = ws == focused_ws
 		local nonempty = contains(nonempty_wss, ws)
 
@@ -55,7 +56,46 @@ local function initialize_wss(wss, nonempty_wss, focused_ws)
 			click_script = aerospace .. " workspace " .. ws,
 		})
 		wss_items[ws] = space
+		spaces[i] = space.name
 	end
+
+	sbar.add("item", "space.prev", {
+		padding_right = 6,
+		icon = {
+			string = "􀆉",
+			font = {
+				style = "Heavy",
+			},
+		},
+		label = { drawing = false },
+		associated_display = "active",
+		click_script = aerospace .. " workspace prev",
+	})
+	spaces[#spaces + 1] = "space.prev"
+
+	sbar.add("item", "space.next", {
+		padding_left = -4,
+		padding_right = 6,
+		icon = {
+			string = "􀆊",
+			font = {
+				style = "Heavy",
+			},
+		},
+		label = { drawing = false },
+		associated_display = "active",
+		click_script = aerospace .. " workspace next",
+	})
+	spaces[#spaces + 1] = "space.next"
+
+	sbar.add("bracket", spaces, {
+		background = {
+			color = colors.bar.bg,
+			height = 30,
+		},
+	})
+
+	sbar.exec("sketchybar --move space.prev before space.1")
 end
 
 -- Adding `with_nonempty_wss` to each item is expensive, so we'll add a sentinel
@@ -92,7 +132,7 @@ sbar.exec(wss_cmd, function(wss_str)
 		sbar.exec(focused_ws_cmd, function(focused_ws_str)
 			local focused_ws = string_to_table(focused_ws_str)[1]
 			initialize_wss(wss, nonempty_wss, focused_ws)
-			sbar.exec("sketchybar --move front_app after space." .. #wss)
+			sbar.exec("sketchybar --move front_app after space.next")
 		end)
 	end)
 end)
