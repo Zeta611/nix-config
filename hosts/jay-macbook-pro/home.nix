@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  osConfig,
   ...
 }:
 
@@ -23,11 +24,7 @@
     inputs.self.outputs.homeManagerModules.darwin
   ];
   terminal.enable = true;
-
-  home.file."./.config/sketchybar/" = {
-    source = ./sketchybar-config;
-    recursive = true;
-  };
+  sketchybar.enable = true;
 
   xdg.enable = true;
 
