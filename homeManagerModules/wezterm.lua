@@ -7,6 +7,9 @@ local window_decorations
 if hostname == "jay-nixos" then
 	font_size = 12.0
 	window_decorations = "NONE"
+elseif hostname == "jay-macbook" then
+	font_size = 15.0
+	window_decorations = "NONE"
 else
 	font_size = 15.0
 	window_decorations = "INTEGRATED_BUTTONS|RESIZE"
@@ -16,6 +19,7 @@ return {
 	default_prog = { wezterm.home_dir .. "/.nix-profile/bin/fish", "-l" },
 	font_size = font_size,
 	window_decorations = window_decorations,
+	use_fancy_tab_bar = false,
 	color_scheme = "tokyonight_day",
 	scrollback_lines = 1048576,
 	enable_scroll_bar = true,
