@@ -1,6 +1,6 @@
 local colors = require("colors")
 
-local aerospace = "/opt/homebrew/bin/aerospace"
+local aerospace = os.getenv("HOME") .. "/.nix-profile/bin/aerospace"
 local wss_cmd = aerospace .. " list-workspaces --monitor focused"
 local nonempty_wss_cmd = aerospace .. " list-workspaces --monitor focused --empty no"
 local focused_ws_cmd = aerospace .. " list-workspaces --focused"
