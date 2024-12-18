@@ -25,7 +25,7 @@ media:subscribe("media_change", function(env)
 	if whitelist[env.INFO.app] then
 		media:set({
 			drawing = (env.INFO.state == "playing") and true or false,
-			label = env.INFO.artist .. ": " .. env.INFO.title,
+			label = string.sub(env.INFO.artist, 1, 15) .. ": " .. string.sub(env.INFO.title, 1, 20),
 		})
 	end
 end)
