@@ -1,23 +1,37 @@
-return {
-  black = 0xff181926,
-  white = 0xffcad3f5,
-  red = 0xffed8796,
-  green = 0xffa6da95,
-  blue = 0xff8aadf4,
-  yellow = 0xffeed49f,
-  orange = 0xfff5a97f,
-  magenta = 0xffc6a0f6,
-  grey = 0xff939ab7,
-  transparent = 0x00000000,
+local ansi = {
+	black = 0xffa1a6c5,
+	red = 0xffff4774,
+	green = 0xff5c8524,
+	yellow = 0xffa27629,
+	blue = 0xff358aff,
+	magenta = 0xffa463ff,
+	cyan = 0xff007ea8,
+	white = 0xff3760bf,
+}
+local apple = {
+	red = 0xfffd4646,
+	yellow = 0xfffeb024,
+	green = 0xff61c554,
+}
 
-  bar = {
-    bg = 0xd01e1e2e,
-    border = 0xff494d64,
-  },
-  popup = {
-    bg = 0xff1e1e2e,
-    border = 0xffcad3f5
-  },
-  bg1 = 0x803c3e4f,
-  bg2 = 0xff494d64,
+return {
+	black = ansi.black,
+	white = ansi.white,
+	red = ansi.red,
+	green = ansi.green,
+	yellow = ansi.yellow,
+	blue = ansi.blue,
+	magenta = ansi.magenta,
+	cyan = ansi.cyan,
+	transparent = 0x00000000,
+	item = {
+		fg = 0xffffffff,
+		bg = 0xff000000,
+	},
+	popup = {
+		bg = 0xff000000,
+		border = 0xffb15c00,
+	},
+	ansi = ansi,
+	apple = apple,
 }

@@ -1,3 +1,5 @@
+local colors = require("colors")
+
 local front_app = sbar.add("item", "front_app", {
 	icon = {
 		drawing = false,
@@ -7,6 +9,8 @@ local front_app = sbar.add("item", "front_app", {
 			style = "Black",
 			size = 12.0,
 		},
+		padding_left = 12,
+		padding_right = 12,
 	},
 })
 

@@ -43,7 +43,6 @@ local function initialize_wss(wss, nonempty_wss, focused_ws)
 				string = ws,
 				padding_left = 2,
 				padding_right = 2,
-				color = colors.white,
 				highlight_color = colors.red,
 				highlight = selected,
 				drawing = nonempty or selected,
@@ -60,6 +59,7 @@ local function initialize_wss(wss, nonempty_wss, focused_ws)
 	end
 
 	sbar.add("item", "space.prev", {
+		padding_left = 6,
 		padding_right = 6,
 		icon = {
 			string = "􀆉",
@@ -75,7 +75,7 @@ local function initialize_wss(wss, nonempty_wss, focused_ws)
 
 	sbar.add("item", "space.next", {
 		padding_left = -4,
-		padding_right = 6,
+		padding_right = 8,
 		icon = {
 			string = "􀆊",
 			font = {
@@ -88,12 +88,7 @@ local function initialize_wss(wss, nonempty_wss, focused_ws)
 	})
 	spaces[#spaces + 1] = "space.next"
 
-	sbar.add("bracket", spaces, {
-		background = {
-			color = colors.bar.bg,
-			height = 30,
-		},
-	})
+	sbar.add("bracket", spaces, {})
 
 	sbar.exec("sketchybar --move space.prev before space.1")
 end
