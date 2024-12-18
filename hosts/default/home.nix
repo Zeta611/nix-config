@@ -34,6 +34,7 @@
     inputs.self.outputs.homeManagerModules.default
   ];
   terminal.enable = true;
+  direnv.enable = true;
   git.enable = true;
   hyprland.enable = true;
   dolphin.enable = true;

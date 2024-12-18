@@ -2,9 +2,9 @@
 
 {
   imports = [
+    ./common.nix
     ./hyprland.nix
     ./dolphin.nix
-    ./terminal.nix
     ./git.nix
     ./neovim.nix
     ./libreoffice.nix

@@ -128,10 +128,6 @@
       ripgrep.enable = true;
       thefuck.enable = true;
       fastfetch.enable = true;
-      direnv = {
-        enable = true;
-        nix-direnv.enable = true;
-      };
     };
 
     home.packages = with pkgs; [
