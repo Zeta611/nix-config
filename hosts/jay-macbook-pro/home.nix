@@ -24,6 +24,7 @@
     inputs.self.outputs.homeManagerModules.darwin
   ];
   terminal.enable = true;
+  aerospace.enable = true;
   sketchybar.enable = true;
 
   xdg.enable = true;
