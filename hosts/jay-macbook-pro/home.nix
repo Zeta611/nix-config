@@ -23,6 +23,10 @@
   imports = [
     inputs.self.outputs.homeManagerModules.darwin
   ];
+
+# :FIXME: Integrate with NixOS git config
+  programs.git.enable = true;
+
   terminal.enable = true;
   direnv.enable = true;
   aerospace.enable = true;
