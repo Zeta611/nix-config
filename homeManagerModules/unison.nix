@@ -11,31 +11,31 @@
   };
 
   config =
-    let
-      stateDirectory = "${config.home.homeDirectory}/.unison";
-    in
+    # let
+    #   stateDirectory = "${config.home.homeDirectory}/.unison";
+    # in
     lib.mkIf config.unison.enable {
-      services.unison = {
-        enable = true;
-        pairs = {
-          main = {
-            roots = [
-              "/home/jay"
-              "/mnt/jay-main"
-            ];
-            commandOptions.source = "main.prf";
-            stateDirectory = stateDirectory;
-          };
-          backup = {
-            roots = [
-              "/home/jay"
-              "/mnt/jay-bk"
-            ];
-            commandOptions.source = "backup.prf";
-            stateDirectory = stateDirectory;
-          };
-        };
-      };
+      # services.unison = {
+      #   enable = true;
+      #   pairs = {
+      #     main = {
+      #       roots = [
+      #         "/home/jay"
+      #         "/mnt/jay-main"
+      #       ];
+      #       commandOptions.source = "main.prf";
+      #       stateDirectory = stateDirectory;
+      #     };
+      #     backup = {
+      #       roots = [
+      #         "/home/jay"
+      #         "/mnt/jay-bk"
+      #       ];
+      #       commandOptions.source = "backup.prf";
+      #       stateDirectory = stateDirectory;
+      #     };
+      #   };
+      # };
 
       home.packages = with pkgs; [
         unison
