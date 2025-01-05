@@ -44,14 +44,9 @@
   unison.enable = true;
   utilities.enable = true;
   thunderbird.enable = true;
+  texlive.enable = true;
   programs = {
     firefox.enable = true;
-    texlive = {
-      enable = true;
-      extraPackages = tpkgs: {
-        inherit (tpkgs) scheme-full;
-      };
-    };
     zathura.enable = true;
   };
 

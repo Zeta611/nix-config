@@ -31,6 +31,7 @@
   direnv.enable = true;
   aerospace.enable = true;
   sketchybar.enable = true;
+  texlive.enable = true;
 
   xdg.enable = true;
 
