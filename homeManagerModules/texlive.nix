@@ -15,6 +15,7 @@
       enable = true;
       extraPackages = tpkgs: {
         inherit (tpkgs) scheme-full;
+        pkgFilter = pkg: pkg.tlType == "run" || pkg.tlType == "bin" || pkg.tlType == "doc" || pkg.tlType == "source";
       };
     };
   };
