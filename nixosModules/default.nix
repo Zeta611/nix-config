@@ -14,6 +14,7 @@
     ./samba.nix
     ./uxplay.nix
     ./avahi.nix
+    ./wine.nix
     ./diskutils.nix
   ];
 }

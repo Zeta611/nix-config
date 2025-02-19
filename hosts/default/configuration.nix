@@ -90,6 +90,8 @@
 
   uxplay.enable = true;
 
+  wine.enable = true;
+
   services.greetd = {
     enable = true;
     settings = {
