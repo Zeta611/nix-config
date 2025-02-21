@@ -73,6 +73,7 @@
   Scale = MatchUppercase,
   range = {\cup, bb},
 ]
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
 %\setmathfont{TeX Gyre Pagella Math}[range={\lbrace,\rbrace},Scale=1.1]
 %\setmathfont{TeX Gyre Pagella Math}[range={\mathbb,\mathfrak},Scale=MatchUppercase]
 %\setmathfont{Asana Math}[range={\checkmark,\bigtriangledown,\cup,\sqcup,\cap,\sqcap,\subseteq,\supseteq,\sqsubseteq,\sqsupseteq,\subset,\supset,\sqsubset,\sqsupset,\in,\ni,\notin},Scale=MatchUppercase]
