@@ -20,11 +20,6 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    wezterm = {
-      url = "github:wez/wezterm/main?dir=nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     solaar = {
       url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
       inputs.nixpkgs.follows = "nixpkgs";

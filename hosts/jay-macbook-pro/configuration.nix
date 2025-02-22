@@ -11,7 +11,6 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [
     pkgs.vim
-    # inputs.wezterm.packages.${pkgs.system}.default
   ];
 
   nix.settings.experimental-features = [
