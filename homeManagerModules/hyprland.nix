@@ -144,7 +144,7 @@
 
         bind =
           [
-            "$mod, T, exec, wezterm start"
+            "$mod, T, exec, ghostty"
             "$mod, Z, exec, zen"
             "$mod, D, exec, dolphin"
             "$mod, V, exec, cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"

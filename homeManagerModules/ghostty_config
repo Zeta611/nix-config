@@ -1,0 +1,17 @@
+command = fish --login --interactive
+theme = tokyonight-day
+mouse-hide-while-typing = true
+
+macos-titlebar-style = tabs
+
+keybind = ctrl+shift+s>h=new_split:left
+keybind = ctrl+shift+s>j=new_split:down
+keybind = ctrl+shift+s>k=new_split:up
+keybind = ctrl+shift+s>l=new_split:right
+
+keybind = ctrl+shift+h=goto_split:left
+keybind = ctrl+shift+j=goto_split:down
+keybind = ctrl+shift+k=goto_split:up
+keybind = ctrl+shift+l=goto_split:right
+
+keybind = global:ctrl+grave_accent=toggle_quick_terminal

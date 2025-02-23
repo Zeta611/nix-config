@@ -2,7 +2,6 @@
   pkgs,
   lib,
   config,
-  inputs,
   ...
 }:
 
@@ -15,7 +14,10 @@
     programs = {
       wezterm = {
         enable = true;
-        extraConfig = builtins.readFile ./wezterm.lua;
+      };
+      ghostty = {
+        enable = true;
+        enableFishIntegration = true;
       };
       fish = {
         enable = true;
@@ -138,6 +140,10 @@
       "fish/themes/tokyonight_day.theme".text = builtins.readFile ./fish_tokyonight_day.theme;
       "lazygit/config.yml".text = builtins.readFile ./lazygit_tokyonight_day.yml;
       "wezterm/colors/tokyonight_day.toml".text = builtins.readFile ./wezterm_tokyonight_day.toml;
+      "wezterm/wezterm.lua".source =
+        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix/homeManagerModules/wezterm.lua";
+      "ghostty/config".source =
+        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix/homeManagerModules/ghostty_config";
     };
   };
 }

@@ -221,3 +221,9 @@ alt-shift-l = ['join-with right', 'mode main']
 [workspace-to-monitor-force-assignment]
 1 = 'main'
 2 = 'secondary'
+
+[[on-window-detected]]
+if.app-id="com.mitchellh.ghostty"
+run= [
+  "layout tiling",
+]
