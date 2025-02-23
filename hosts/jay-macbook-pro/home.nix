@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   inputs,
   osConfig,
   ...
@@ -34,6 +35,11 @@
   texlive.enable = true;
 
   xdg.enable = true;
+# :NOTE: Temporary until full migration of homebrew
+  xdg.configFile = {
+    "ghostty/config".source =
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix/homeManagerModules/ghostty_config";
+  };
 
   programs.home-manager.enable = true;
 }

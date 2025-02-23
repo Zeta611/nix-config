@@ -223,7 +223,5 @@ alt-shift-l = ['join-with right', 'mode main']
 2 = 'secondary'
 
 [[on-window-detected]]
-if.app-id="com.mitchellh.ghostty"
-run= [
-  "layout tiling",
-]
+if.app-id = "com.mitchellh.ghostty"
+run = ["layout floating"]

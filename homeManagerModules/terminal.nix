@@ -15,10 +15,6 @@
       wezterm = {
         enable = true;
       };
-      ghostty = {
-        enable = true;
-        enableFishIntegration = true;
-      };
       fish = {
         enable = true;
         functions = {
@@ -142,8 +138,6 @@
       "wezterm/colors/tokyonight_day.toml".text = builtins.readFile ./wezterm_tokyonight_day.toml;
       "wezterm/wezterm.lua".source =
         config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix/homeManagerModules/wezterm.lua";
-      "ghostty/config".source =
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix/homeManagerModules/ghostty_config";
     };
   };
 }

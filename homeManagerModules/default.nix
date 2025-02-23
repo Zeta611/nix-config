@@ -3,14 +3,15 @@
 {
   imports = [
     ./common.nix
-    ./hyprland.nix
     ./dolphin.nix
+    ./ghostty.nix
     ./git.nix
-    ./neovim.nix
+    ./hyprland.nix
     ./libreoffice.nix
+    ./neovim.nix
     ./rclone.nix
+    ./thunderbird.nix
     ./unison.nix
     ./utilities.nix
-    ./thunderbird.nix
   ];
 }

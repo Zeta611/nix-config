@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ./terminal.nix
     ./direnv.nix
+    ./terminal.nix
     ./texlive.nix
   ];
 }
