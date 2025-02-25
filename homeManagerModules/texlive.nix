@@ -42,7 +42,7 @@
       passthru.tlType = "run";
     };
     custom-texmf = {
-      pkgs = [ simplesnt ];
+      pkgs = [ ebproofx latex-report-classes simplesnt snu-ece-bsc-thesis zdoc ];
     };
   in
   lib.mkIf config.texlive.enable {
