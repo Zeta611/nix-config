@@ -54,5 +54,8 @@
         pkgFilter = pkg: pkg.tlType == "run" || pkg.tlType == "bin" || pkg.tlType == "doc" || pkg.tlType == "source";
       };
     };
+    home.packages = with pkgs; [
+      python313Packages.pygments
+    ];
   };
 }
