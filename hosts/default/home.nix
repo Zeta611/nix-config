@@ -34,6 +34,7 @@
     inputs.self.outputs.homeManagerModules.default
   ];
   terminal.enable = true;
+  claude-code.enable = true;
   ghostty.enable = true;
   direnv.enable = true;
   git.enable = true;

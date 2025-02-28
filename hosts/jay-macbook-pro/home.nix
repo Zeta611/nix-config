@@ -25,17 +25,18 @@
     inputs.self.outputs.homeManagerModules.darwin
   ];
 
-# :FIXME: Integrate with NixOS git config
+  # :FIXME: Integrate with NixOS git config
   programs.git.enable = true;
 
   terminal.enable = true;
+  claude-code.enable = true;
   direnv.enable = true;
   aerospace.enable = true;
   sketchybar.enable = true;
   texlive.enable = true;
 
   xdg.enable = true;
-# :NOTE: Temporary until full migration of homebrew
+  # :NOTE: Temporary until full migration of homebrew
   xdg.configFile = {
     "ghostty/config".source =
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix/homeManagerModules/ghostty_config";
