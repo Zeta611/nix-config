@@ -14,7 +14,7 @@
   config = lib.mkIf config.utilities.enable {
     home.packages = with pkgs; [
       transmission_4-gtk
-      tldr
+      tealdeer
       inputs.zen-browser.packages."${system}".default
       chromium
       mpv
