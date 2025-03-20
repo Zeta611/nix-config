@@ -123,7 +123,7 @@
         ];
       };
       ripgrep.enable = true;
-      thefuck.enable = true;
+      # thefuck.enable = true;
       fastfetch.enable = true;
     };
 
