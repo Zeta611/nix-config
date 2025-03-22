@@ -14,6 +14,6 @@
     home.packages = with pkgs; [
       aerospace
     ];
-    xdg.configFile."aerospace/aerospace.toml".source = ./aerospace.toml;
+    xdg.configFile."aerospace/aerospace.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix/homeManagerModules/aerospace.toml";
   };
 }

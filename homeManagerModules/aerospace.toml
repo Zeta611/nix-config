@@ -66,12 +66,7 @@ inner.horizontal = 10
 inner.vertical = 10
 outer.left = 10
 outer.bottom = 10
-outer.top = [
-  { monitor."built-in" = 18 },
-  { monitor."LG ULTRAWIDE" = 48 },
-  { monitor."LG HDR 4k" = 44 },
-  24,
-]
+outer.top = [{ monitor."built-in" = 14 }, 44]
 outer.right = 10
 
 # 'main' binding mode declaration
