@@ -20,6 +20,7 @@
         nixd
         ocamlPackages.ocaml-lsp
         nodejs
+        svelte-language-server
       ];
 
       plugins = with pkgs.vimPlugins; [
