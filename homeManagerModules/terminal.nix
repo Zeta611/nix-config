@@ -135,6 +135,8 @@
     home.packages = with pkgs; [
       nerd-fonts.jetbrains-mono
       nixfmt-rfc-style
+      bison
+      flex
     ];
 
     xdg.configFile = {
