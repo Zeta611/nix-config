@@ -52,6 +52,11 @@
             fish_add_path -a /opt/homebrew/bin
             fish_add_path -a /opt/homebrew/sbin
           end
+
+          if test -d /Users/jay/.local/bin/sketch-1.7.6/sketch-frontend
+            fish_add_path -a /Users/jay/.local/bin/sketch-1.7.6/sketch-frontend
+            set -gx SKETCH_HOME /Users/jay/.local/bin/sketch-1.7.6/sketch-frontend/runtime
+          end
         '';
         interactiveShellInit = ''
           if test -f $XDG_CONFIG_HOME/fish/secrets.fish
