@@ -80,6 +80,7 @@
     enable = true;
     defaultEditor = true;
   };
+  programs.java.enable = true;
 
   security.polkit.enable = true;
 
