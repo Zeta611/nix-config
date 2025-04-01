@@ -27,6 +27,7 @@
 
   # :FIXME: Integrate with NixOS git config
   programs.git.enable = true;
+  programs.java.enable = true;
 
   terminal.enable = true;
   claude-code.enable = true;
