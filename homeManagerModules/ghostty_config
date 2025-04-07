@@ -16,4 +16,6 @@ keybind = ctrl+shift+j=goto_split:down
 keybind = ctrl+shift+k=goto_split:up
 keybind = ctrl+shift+l=goto_split:right
 
+keybind = ctrl+shift+enter=toggle_split_zoom
+
 keybind = global:ctrl+grave_accent=toggle_quick_terminal
