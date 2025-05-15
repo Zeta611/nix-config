@@ -59,6 +59,7 @@
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
+    julia-mono
     whatsapp-for-linux
     discord
     # # It is sometimes useful to fine-tune packages, for example, by applying
