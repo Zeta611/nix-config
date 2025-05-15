@@ -21,6 +21,7 @@
         ocamlPackages.ocaml-lsp
         nodejs
         svelte-language-server
+        typescript-language-server
       ];
 
       plugins = with pkgs.vimPlugins; [
