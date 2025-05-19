@@ -21,6 +21,8 @@
         ocamlPackages.ocaml-lsp
         nodejs
         svelte-language-server
+        tailwindcss-language-server
+        vscode-langservers-extracted
         typescript-language-server
       ];
 
