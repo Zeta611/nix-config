@@ -59,6 +59,7 @@
           end
         '';
         interactiveShellInit = ''
+          direnv hook fish | source
           if test -f $XDG_CONFIG_HOME/fish/secrets.fish
               source $XDG_CONFIG_HOME/fish/secrets.fish
           end

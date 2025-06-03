@@ -146,6 +146,7 @@
   home-manager = {
     extraSpecialArgs = {
       inherit inputs;
+      hostName = "jay-nixos";
     };
     sharedModules = [
       inputs.plasma-manager.homeManagerModules.plasma-manager

@@ -31,6 +31,7 @@
   home-manager = {
     extraSpecialArgs = {
       inherit inputs;
+      hostName = "jay-macbook";
     };
     users = {
       "jay" = import ./home.nix;
