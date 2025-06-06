@@ -24,6 +24,7 @@
         tailwindcss-language-server
         vscode-langservers-extracted
         typescript-language-server
+        rescript-language-server
       ];
 
       plugins = with pkgs.vimPlugins; [

@@ -5,8 +5,15 @@ return {
 	version = false, -- set this if you want to always pull the latest change
 	opts = {
 		provider = "claude",
-		claude = {
-			api_key_name = "cmd:op read op://Personal/anthropic-api-key/credential",
+		providers = {
+			claude = {
+				endpoint = "https://api.anthropic.com",
+				model = "claude-sonnet-4-20250514",
+				extra_request_body = {
+					temperature = 0.75,
+					max_tokens = 4096,
+				},
+			},
 		},
 	},
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
