@@ -23,6 +23,7 @@
         svelte-language-server
         tailwindcss-language-server
         vscode-langservers-extracted
+        vtsls
         typescript-language-server
         rescript-language-server
       ];
