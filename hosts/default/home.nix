@@ -21,8 +21,7 @@
 
   i18n = {
     inputMethod = {
-      type = "fcitx5";
-      enabled = true;
+      enabled = "fcitx5";
       fcitx5.addons = with pkgs; [
         fcitx5-gtk
         fcitx5-configtool

@@ -133,12 +133,15 @@
     };
   };
 
+  virtualisation.docker.enable = true;
+
   users.users.jay = {
     isNormalUser = true;
     description = "Jay Lee";
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
     packages = [ ];
   };
