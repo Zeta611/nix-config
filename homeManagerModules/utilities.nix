@@ -53,15 +53,16 @@
     xdg.mimeApps = {
       enable = true;
       defaultApplications = {
+        "application/pdf" = "org.pwmt.zathura-ps.desktop";
+
         # https://github.com/zen-browser/desktop/blob/499781baf15cbd33b2dba859dd2fb5cacf0e7869/AppDir/zen.desktop#L7
-        "text/html" = "zen.desktop";
-        "text/xml" = "zen.desktop";
-        "application/xhtml+xml" = "zen.desktop";
-        "x-scheme-handler/http" = "zen.desktop";
-        "x-scheme-handler/https" = "zen.desktop";
-        "application/x-xpinstall" = "zen.desktop";
-        "application/pdf" = "zen.desktop";
-        "application/json" = "zen.desktop";
+        "text/html" = "zen-beta.desktop";
+        "text/xml" = "zen-beta.desktop";
+        "application/xhtml+xml" = "zen-beta.desktop";
+        "x-scheme-handler/http" = "zen-beta.desktop";
+        "x-scheme-handler/https" = "zen-beta.desktop";
+        "application/x-xpinstall" = "zen-beta.desktop";
+        "application/json" = "zen-beta.desktop";
 
         # https://github.com/woelper/oculante/blob/7e04c9282cf30547197ec5ff8a01fac534d369f0/res/oculante.desktop#L11
         "image/bmp" = "oculante.desktop";
