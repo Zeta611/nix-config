@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   inputs,
   ...
@@ -12,6 +13,9 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.initrd.kernelModules = [ "apfs" ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.apfs ];
 
   fileSystems."/data" = {
     device = "/dev/hdd/data";
