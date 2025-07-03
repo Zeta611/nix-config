@@ -11,6 +11,19 @@
   };
 
   config = lib.mkIf config.hyprland.enable {
+    nixpkgs.overlays = [
+      (final: prev: {
+        waybar = prev.waybar.overrideAttrs (old: {
+          src = pkgs.fetchFromGitHub {
+            owner = "Alexays";
+            repo = "Waybar";
+            rev = "f409f53131b3061a4c8f08f3a39abe1e3417ff4b";
+            hash = "sha256-CbvStVJ0bzrIHh2CkaM2epMB1AoTJMAw+Mx/ORJTOdY=";
+          };
+        });
+      })
+    ];
+
     programs = {
       fuzzel = {
         enable = true;
