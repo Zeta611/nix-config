@@ -36,6 +36,7 @@
   terminal.enable = true;
   claude-code.enable = true;
   cursor.enable = true;
+  cursor-cli.enable = true;
   ghostty.enable = true;
   direnv.enable = true;
   git.enable = true;

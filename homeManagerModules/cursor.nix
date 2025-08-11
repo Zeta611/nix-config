@@ -11,7 +11,7 @@
     cursor.enable = lib.mkEnableOption "enable cursor";
   };
 
-  config = lib.mkIf config.claude-code.enable {
+  config = lib.mkIf config.cursor.enable {
     home.packages = with pkgs; [
       code-cursor
     ];

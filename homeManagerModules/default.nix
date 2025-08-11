@@ -13,5 +13,6 @@
     ./thunderbird.nix
     ./unison.nix
     ./utilities.nix
+    ./cursor-cli/default.nix
   ];
 }
