@@ -130,12 +130,12 @@
 
         exec-once = [
           "waybar"
+          "variety"
           "blueman-applet"
           "fcitx5 -d"
           "ELECTRON_OZONE_PLATFORM_HINT=auto 1password --silent"
           "hyprctl setcursor macOS 24"
           "systemctl --user start hyprpolkitagent"
-          "mpvpaper -p '*' ~/Videos/wallpapers/ -o 'no-audio shuffle loop-playlist'"
           "wl-paste --type text --watch cliphist store"
         ];
 
@@ -153,53 +153,58 @@
           natural_scroll = true;
         };
 
+        misc = {
+          force_default_wallpaper = -1; # Remove default wallpaper
+          disable_hyprland_logo = true;
+          enable_anr_dialog = false; # Disable non-responsive app dialogues
+        };
+
         "$mod" = "SUPER";
 
-        bind =
-          [
-            "$mod, T, exec, ghostty"
-            "$mod, Z, exec, zen"
-            "$mod, D, exec, dolphin"
-            "$mod, V, exec, cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"
-            "$mod SHIFT, Z, exec, zen --private-window"
-            "$mod, SPACE, exec, fuzzel"
+        bind = [
+          "$mod, T, exec, ghostty"
+          "$mod, Z, exec, zen"
+          "$mod, D, exec, dolphin"
+          "$mod, V, exec, cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"
+          "$mod SHIFT, Z, exec, zen --private-window"
+          "$mod, SPACE, exec, fuzzel"
 
-            "$mod, C, killactive"
-            "$mod, Q, exit"
+          "$mod, C, killactive"
+          "$mod, Q, exit"
 
-            "$mod SHIFT, F, fullscreen"
-            "$mod, F, togglefloating"
-            "$mod SHIFT, C, centerwindow"
+          "$mod SHIFT, F, fullscreen"
+          "$mod, F, togglefloating"
+          "$mod SHIFT, C, centerwindow"
 
-            "$mod, H, movefocus, l"
-            "$mod, J, movefocus, d"
-            "$mod, K, movefocus, u"
-            "$mod, L, movefocus, r"
-            "$mod SHIFT, H, movewindoworgroup, l"
-            "$mod SHIFT, J, movewindoworgroup, d"
-            "$mod SHIFT, K, movewindoworgroup, u"
-            "$mod SHIFT, L, movewindoworgroup, r"
+          "$mod, H, movefocus, l"
+          "$mod, J, movefocus, d"
+          "$mod, K, movefocus, u"
+          "$mod, L, movefocus, r"
+          "$mod SHIFT, H, movewindoworgroup, l"
+          "$mod SHIFT, J, movewindoworgroup, d"
+          "$mod SHIFT, K, movewindoworgroup, u"
+          "$mod SHIFT, L, movewindoworgroup, r"
 
-            "$mod, code:47, togglegroup"
-            "$mod CONTROL, J, changegroupactive, f"
-            "$mod CONTROL, K, changegroupactive, b"
+          "$mod, code:47, togglegroup"
+          "$mod CONTROL, J, changegroupactive, f"
+          "$mod CONTROL, K, changegroupactive, b"
 
-            "$mod, TAB, workspace, +1"
-            "$mod SHIFT, TAB, workspace, -1"
-          ]
-          ++ (builtins.concatLists (
-            builtins.genList (
-              i:
-              let
-                ws = i + 1;
-              in
-              [
-                # code:10=`1` -- code:19=`0`
-                "$mod, code:1${toString i}, workspace, ${toString ws}"
-                "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-              ]
-            ) 9
-          ));
+          "$mod, TAB, workspace, +1"
+          "$mod SHIFT, TAB, workspace, -1"
+        ]
+        ++ (builtins.concatLists (
+          builtins.genList (
+            i:
+            let
+              ws = i + 1;
+            in
+            [
+              # code:10=`1` -- code:19=`0`
+              "$mod, code:1${toString i}, workspace, ${toString ws}"
+              "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+            ]
+          ) 9
+        ));
 
         bindel =
           let
@@ -238,6 +243,8 @@
       hyprpolkitagent
       mpvpaper
       hyprpicker
+      variety
+      swww
     ];
   };
 }
