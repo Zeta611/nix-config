@@ -46,6 +46,8 @@
           tree = "eza --tree --icons";
         };
         shellInit = ''
+          fish_add_path $HOME/.local/bin
+
           fish_config theme choose tokyonight_day
 
           if test -d /opt/homebrew
