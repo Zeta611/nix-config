@@ -1,5 +1,5 @@
 command = ~/.nix-profile/bin/fish --login --interactive
-theme = tokyonight-day
+theme = TokyoNight Day
 font-size = 11
 
 mouse-hide-while-typing = true
