@@ -29,6 +29,11 @@
         enable = true;
         openFirewall = true;
       };
+      bazarr = {
+        enable = true;
+        openFirewall = true;
+        user = config.servarr.username;
+      };
       transmission = {
         enable = true;
         openFirewall = true;
