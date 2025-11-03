@@ -41,7 +41,7 @@
   };
 
   services.sketchybar = {
-    enable = true;
+    enable = false;
     package = pkgs.sketchybar;
     extraPackages = [
       pkgs.lua5_4_compat

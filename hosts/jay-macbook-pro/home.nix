@@ -33,7 +33,7 @@
   claude-code.enable = true;
   direnv.enable = true;
   aerospace.enable = true;
-  sketchybar.enable = true;
+  sketchybar.enable = false;
   texlive.enable = true;
 
   xdg.enable = true;
