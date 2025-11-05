@@ -24,7 +24,7 @@
       enabled = "fcitx5";
       fcitx5.addons = with pkgs; [
         fcitx5-gtk
-        fcitx5-configtool
+        qt6Packages.fcitx5-configtool
         fcitx5-hangul
       ];
     };
@@ -63,7 +63,7 @@
     noto-fonts-cjk-serif
     julia-mono
     d2coding
-    whatsapp-for-linux
+    wasistlos
     discord
     opam
     unzip
