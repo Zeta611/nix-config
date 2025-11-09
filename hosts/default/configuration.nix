@@ -146,6 +146,7 @@
       "networkmanager"
       "wheel"
       "docker"
+      "i2c"
     ];
     packages = [ ];
   };

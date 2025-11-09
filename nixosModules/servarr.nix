@@ -36,6 +36,7 @@
       };
       transmission = {
         enable = true;
+        package = pkgs.transmission_4;
         openFirewall = true;
         user = config.servarr.username;
         settings = {
