@@ -208,7 +208,7 @@
 
         bindel =
           let
-            bright_cmd = "ddcutil --bus 14 setvcp 10";
+            bright_cmd = "ddcutil --bus 14 --sleep-multiplier 0.1 setvcp 10";
           in
           [
             # For my HHKB, SCROLL_LOCK & PAUSE correspond to macOS's brightness ctl
