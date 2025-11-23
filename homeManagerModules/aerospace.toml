@@ -222,5 +222,9 @@ if.app-id = "com.mitchellh.ghostty"
 run = ["layout floating"]
 
 [[on-window-detected]]
+if.app-id = "com.kakao.KakaoTalkMac"
+run = ["layout floating"]
+
+[[on-window-detected]]
 if.app-id = "com.apple.facetime"
 run = ["layout floating"]
