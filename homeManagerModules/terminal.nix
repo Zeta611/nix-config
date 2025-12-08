@@ -25,6 +25,7 @@
           starship_transient_rprompt_func = "starship module time";
         };
         shellAbbrs = {
+          c = "cursor";
           v = "nvim";
           gs = "git status";
           gst = "git stash";
