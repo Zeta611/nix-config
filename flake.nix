@@ -47,7 +47,7 @@
           ];
         };
       };
-      homeManagerModules = {
+      homeModules = {
         darwin = ./homeManagerModules/darwin.nix;
         default = ./homeManagerModules;
       };

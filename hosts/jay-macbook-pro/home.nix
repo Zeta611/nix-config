@@ -22,7 +22,7 @@
   nixpkgs.config.allowUnfree = true;
 
   imports = [
-    inputs.self.outputs.homeManagerModules.darwin
+    inputs.self.outputs.homeModules.darwin
   ];
 
   # :FIXME: Integrate with NixOS git config

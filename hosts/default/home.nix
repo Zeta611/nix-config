@@ -31,7 +31,7 @@
   };
 
   imports = [
-    inputs.self.outputs.homeManagerModules.default
+    inputs.self.outputs.homeModules.default
   ];
   terminal.enable = true;
   claude-code.enable = true;

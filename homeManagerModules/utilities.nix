@@ -24,7 +24,7 @@
       wl-clipboard
       cliphist
       jellyfin-mpv-shim
-      zotero_7
+      zotero
     ];
 
     xdg.configFile = {
