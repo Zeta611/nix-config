@@ -15,12 +15,12 @@
     home.packages = with pkgs; [
       transmission_4-gtk
       tealdeer
-      inputs.zen-browser.packages."${system}".default
+      inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
       chromium
       mpv
       clang
       deno
-      oculante
+      # oculante  # Temporarily disabled - needs fix for nasm compatibility
       wl-clipboard
       cliphist
       jellyfin-mpv-shim

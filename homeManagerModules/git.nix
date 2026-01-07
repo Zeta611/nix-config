@@ -15,9 +15,9 @@
     programs = {
       git = {
         enable = true;
-        userName = "Jay Lee";
-        userEmail = "jaeho.lee@snu.ac.kr";
-        extraConfig = {
+        settings = {
+          user.name = "Jay Lee";
+          user.email = "jaeho.lee@snu.ac.kr";
           commit.gpgsign = true;
           user.signingkey = "630C65D0299CF2D6!";
           init.defaultBranch = "main";

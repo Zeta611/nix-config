@@ -123,10 +123,11 @@
 
     wayland.windowManager.hyprland = {
       enable = true;
-      xwayland.enable = true;
       settings = {
         monitor = "DP-3, preferred, auto, 1.5";
-        xwayland.force_zero_scaling = true;
+        xwayland = {
+          force_zero_scaling = true;
+        };
 
         exec-once = [
           "waybar"
