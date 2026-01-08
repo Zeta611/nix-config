@@ -20,7 +20,7 @@
       mpv
       clang
       deno
-      # oculante  # Temporarily disabled - needs fix for nasm compatibility
+      imv
       wl-clipboard
       cliphist
       jellyfin-mpv-shim
