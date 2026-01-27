@@ -84,7 +84,6 @@
         };
       };
 
-      lazygit.enable = true;
       eza.enable = true;
 
       zoxide.enable = true;
@@ -137,6 +136,7 @@
     };
 
     home.packages = with pkgs; [
+      lazygit
       nerd-fonts.jetbrains-mono
       nixfmt-rfc-style
       bison
