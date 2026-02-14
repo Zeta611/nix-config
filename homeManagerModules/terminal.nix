@@ -138,7 +138,7 @@
     home.packages = with pkgs; [
       lazygit
       nerd-fonts.jetbrains-mono
-      nixfmt-rfc-style
+      nixfmt
       bison
       flex
     ];
