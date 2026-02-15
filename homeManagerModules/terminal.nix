@@ -26,7 +26,7 @@
         };
         shellAbbrs = {
           c = "cursor";
-          v = "nvim";
+          v = "vim";
           gs = "git status";
           gst = "git stash";
           ga = "git add";

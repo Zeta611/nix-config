@@ -26,6 +26,11 @@
     };
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+
+    nvf = {
+      url = "github:NotAShelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -55,7 +60,9 @@
       darwinConfigurations = {
         "jay-macbook" = nix-darwin.lib.darwinSystem {
           specialArgs = { inherit inputs; };
-          modules = [ ./hosts/jay-macbook-pro/configuration.nix ];
+          modules = [
+            ./hosts/jay-macbook-pro/configuration.nix
+          ];
         };
       };
 

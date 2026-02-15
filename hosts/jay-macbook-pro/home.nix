@@ -35,6 +35,7 @@
   aerospace.enable = true;
   sketchybar.enable = false;
   texlive.enable = true;
+  nvf.enable = true;
 
   xdg.enable = true;
   # :NOTE: Temporary until full migration of homebrew
