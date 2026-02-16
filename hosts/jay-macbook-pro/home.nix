@@ -25,9 +25,44 @@
     inputs.self.outputs.homeModules.darwin
   ];
 
-  # :FIXME: Integrate with NixOS git config
-  programs.git.enable = true;
+  programs = {
+    git = {
+      enable = true;
+      signing = {
+        key = "~/.ssh/id_ed25519.pub";
+        signByDefault = true;
+      };
+      settings = {
+        user.name = "Jay Lee";
+        user.email = "jaeho.lee@snu.ac.kr";
+        commit.gpgsign = true;
+        init.defaultBranch = "main";
+        gpg.format = "ssh";
+      };
+    };
+    gpg.enable = true;
+    ssh = {
+      enable = true;
+      addKeysToAgent = "yes";
+      matchBlocks = {
+        "github.com" = {
+          hostname = "github.com";
+          user = "git";
+          identityFile = "~/.ssh/id_ed25519";
+          extraOptions = {
+            UseKeychain = "yes"; # macOS Keychain integration
+          };
+        };
+      };
+    };
+  };
+
   programs.java.enable = true;
+
+  programs.discord = {
+    enable = true;
+    settings.SKIP_HOST_UPDATE = true;
+  };
 
   terminal.enable = true;
   claude-code.enable = true;
@@ -36,6 +71,15 @@
   sketchybar.enable = false;
   texlive.enable = true;
   nvf.enable = true;
+  zen-browser.enable = true;
+
+  home.packages = with pkgs; [
+    zoom-us
+    slack
+    raycast
+    bartender
+    istat-menus
+  ];
 
   xdg.enable = true;
   # :NOTE: Temporary until full migration of homebrew

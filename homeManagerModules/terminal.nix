@@ -13,7 +13,7 @@
   config = lib.mkIf config.terminal.enable {
     programs = {
       wezterm = {
-        enable = true;
+        enable = false;
       };
       fish = {
         enable = true;
