@@ -20,6 +20,17 @@
     "flakes"
   ];
 
+  nix.optimise = {
+    automatic = true;
+    interval = { Weekday = 0; Hour = 0; Minute = 0; };
+  };
+
+  nix.gc = {
+    automatic = true;
+    interval = { Weekday = 0; Hour = 0; Minute = 0; };
+    options = "--delete-older-than 30d";
+  };
+
   security.pam.services.sudo_local.touchIdAuth = true;
 
   users.users.jay = {

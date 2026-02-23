@@ -92,7 +92,7 @@ outer.right = 10
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
 # You can uncomment the following lines to open up terminal with alt + enter shortcut (like in i3)
-ctrl-shift-enter = 'exec-and-forget open -n -a Ghostty'
+ctrl-shift-t = 'exec-and-forget open -n -a Ghostty'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'
