@@ -66,6 +66,14 @@
     casks = [
       "ghostty"
       "wispr-flow"
+      # Fonts
+      "font-alegreya"
+      "font-d2coding"
+      "font-juliamono"
+      "font-noto-sans-cjk-kr"
+      "font-noto-serif-cjk-kr"
+      "font-sf-pro"
+      "font-tsukimi-rounded"
     ];
     # Oh boy...
     masApps = {
