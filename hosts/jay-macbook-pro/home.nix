@@ -74,11 +74,13 @@
   zen-browser.enable = true;
 
   home.packages = with pkgs; [
-    zoom-us
-    slack
-    raycast
     bartender
+    code-cursor
     istat-menus
+    raycast
+    slack
+    spotify
+    zoom-us
   ];
 
   xdg.enable = true;
