@@ -81,6 +81,7 @@
     slack
     spotify
     zoom-us
+    zotero
   ];
 
   xdg.enable = true;

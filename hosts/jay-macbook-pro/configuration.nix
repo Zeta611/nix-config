@@ -64,8 +64,11 @@
       upgrade = true;
     };
     casks = [
+      "temurin" # JDK
       "ghostty"
       "wispr-flow"
+      "microsoft-excel"
+      "libreoffice"
       # Fonts
       "font-alegreya"
       "font-d2coding"
