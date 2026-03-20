@@ -41,6 +41,7 @@
         spaces = {
           "Main" = {
             id = "5CD81D04-1BB2-4F95-A968-C29F44CBBEED";
+            icon = "🏠";
             position = 1000;
             theme = {
               type = "gradient";
@@ -67,6 +68,57 @@
                 }
               ];
               opacity = 0.75;
+              texture = 0.5;
+            };
+          };
+          "Research" = {
+            id = "EB1BD8F7-4F34-4825-935D-130CD6AEF720";
+            icon = "🚀";
+            position = 2000;
+            theme = {
+              type = "gradient";
+              colors = [
+                {
+                  red = 160;
+                  green = 60;
+                  blue = 240;
+                  algorithm = "complementary";
+                  lightness = 70;
+                  position.x = 138;
+                  position.y = 158;
+                  type = "explicit-lightness";
+                }
+                {
+                  red = 60;
+                  green = 220;
+                  blue = 200;
+                  algorithm = "complementary";
+                  lightness = 70;
+                  position.x = 220;
+                  position.y = 200;
+                  type = "explicit-lightness";
+                }
+              ];
+              opacity = 0.65;
+              texture = 0.5;
+            };
+          };
+          "NixOS" = {
+            id = "D7197E2A-3178-423A-B23C-472636D165CD";
+            icon = "❄️";
+            position = 3000;
+            theme = {
+              type = "gradient";
+              colors = [
+                {
+                  red = 150;
+                  green = 190;
+                  blue = 230;
+                  algorithm = "floating";
+                  type = "explicit-lightness";
+                }
+              ];
+              opacity = 0.2;
               texture = 0.5;
             };
           };
