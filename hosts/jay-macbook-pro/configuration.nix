@@ -63,12 +63,16 @@
       cleanup = "uninstall";
       upgrade = true;
     };
+    brews = [
+      "mas"
+    ];
     casks = [
       "temurin" # JDK
       "ghostty"
       "wispr-flow"
       "microsoft-excel"
       "libreoffice"
+      "obs"
       # Fonts
       "font-alegreya"
       "font-d2coding"
@@ -80,8 +84,10 @@
     ];
     # Oh boy...
     masApps = {
+      Amphetamine = 937984704;
       KakaoTalk = 869223134;
       Keynote = 409183694;
+      "DaVinci Resolve" = 571213070;
     };
   };
 
