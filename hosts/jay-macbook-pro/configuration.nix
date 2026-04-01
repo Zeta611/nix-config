@@ -94,6 +94,7 @@
   system.defaults = {
     NSGlobalDomain = {
       AppleICUForce24HourTime = true;
+      ApplePressAndHoldEnabled = false;
       AppleScrollerPagingBehavior = true;
       AppleShowAllExtensions = true;
       InitialKeyRepeat = 14;
