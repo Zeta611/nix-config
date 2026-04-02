@@ -67,12 +67,15 @@
       "mas"
     ];
     casks = [
+      "discord"
       "temurin" # JDK
       "ghostty"
       "wispr-flow"
+      "keka"
       "microsoft-excel"
       "libreoffice"
       "obs"
+      "transmission"
       # Fonts
       "font-alegreya"
       "font-d2coding"

@@ -59,11 +59,6 @@
 
   programs.java.enable = true;
 
-  programs.discord = {
-    enable = true;
-    settings.SKIP_HOST_UPDATE = true;
-  };
-
   terminal.enable = true;
   claude-code.enable = true;
   direnv.enable = true;
