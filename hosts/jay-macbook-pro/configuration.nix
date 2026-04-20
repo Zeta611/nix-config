@@ -68,14 +68,16 @@
     ];
     casks = [
       "discord"
-      "temurin" # JDK
       "ghostty"
-      "wispr-flow"
+      "iina"
       "keka"
-      "microsoft-excel"
       "libreoffice"
+      "microsoft-excel"
       "obs"
+      "t3-code"
+      "temurin" # JDK
       "transmission"
+      "wispr-flow"
       # Fonts
       "font-alegreya"
       "font-d2coding"
@@ -91,6 +93,7 @@
       KakaoTalk = 869223134;
       Keynote = 409183694;
       "DaVinci Resolve" = 571213070;
+      "Unicorn HTTPS" = 1475628500;
     };
   };
 
