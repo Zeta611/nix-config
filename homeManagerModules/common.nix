@@ -13,7 +13,6 @@
     ./terminal.nix
     ./nvf.nix
     ./texlive.nix
-    ./claude-code.nix
     ./cursor.nix
   ];
 }

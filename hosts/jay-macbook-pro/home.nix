@@ -60,7 +60,6 @@
   programs.java.enable = true;
 
   terminal.enable = true;
-  claude-code.enable = true;
   direnv.enable = true;
   aerospace.enable = true;
   sketchybar.enable = false;

@@ -74,9 +74,13 @@
       "libreoffice"
       "microsoft-excel"
       "obs"
-      "t3-code"
       "temurin" # JDK
       "transmission"
+      # AI
+      "claude"
+      "claude-code"
+      "codex"
+      "t3-code"
       "wispr-flow"
       # Fonts
       "font-alegreya"
