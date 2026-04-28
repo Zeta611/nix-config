@@ -48,6 +48,7 @@
         };
         shellInit = ''
           fish_add_path $HOME/.local/bin
+          fish_add_path $HOME/.npm-global/bin
 
           fish_config theme choose tokyonight_day
 
@@ -139,6 +140,7 @@
       lazygit
       nerd-fonts.jetbrains-mono
       nixfmt
+      nodejs
       bison
       flex
     ];

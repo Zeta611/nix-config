@@ -14,6 +14,7 @@
   environment.systemPackages = [
     pkgs.vim
   ];
+  environment.shells = [ pkgs.fish ];
 
   nix.settings.experimental-features = [
     "nix-command"
@@ -36,6 +37,7 @@
   users.users.jay = {
     home = "/Users/jay";
   };
+  users.users.jay.shell = pkgs.fish;
 
   nixpkgs.config.allowUnfree = true;
 
@@ -67,6 +69,8 @@
       "mas"
     ];
     casks = [
+      "cyberduck"
+      "google-chrome"
       "discord"
       "ghostty"
       "iina"
@@ -78,7 +82,7 @@
       "transmission"
       # AI
       "claude"
-      "claude-code"
+      "claude-code@latest"
       "codex"
       "t3-code"
       "wispr-flow"
