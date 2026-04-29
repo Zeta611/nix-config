@@ -72,7 +72,6 @@
     bartender
     code-cursor
     istat-menus
-    raycast
     skimpdf
     slack
     spotify

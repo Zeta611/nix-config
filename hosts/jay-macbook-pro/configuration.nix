@@ -78,6 +78,7 @@
       "libreoffice"
       "microsoft-excel"
       "obs"
+      "raycast"
       "temurin" # JDK
       "transmission"
       # AI
