@@ -78,7 +78,9 @@
       "libreoffice"
       "microsoft-excel"
       "obs"
+      "okta-verify"
       "raycast"
+      "tailscale"
       "temurin" # JDK
       "transmission"
       # AI
