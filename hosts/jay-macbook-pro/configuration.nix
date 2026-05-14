@@ -12,6 +12,8 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.beta
+    pkgs.mysides
     pkgs.vim
   ];
   environment.shells = [ pkgs.fish ];
@@ -67,12 +69,15 @@
     };
     brews = [
       "mas"
+      "gh"
     ];
     casks = [
+      # "bartender"
+      "cursor"
       "cyberduck"
-      "google-chrome"
       "discord"
       "ghostty"
+      "google-chrome"
       "iina"
       "keka"
       "libreoffice"
@@ -80,7 +85,8 @@
       "obs"
       "okta-verify"
       "raycast"
-      "tailscale"
+      "slack"
+      "tailscale-app"
       "temurin" # JDK
       "transmission"
       # AI
@@ -123,6 +129,46 @@
       autohide = true;
       largesize = 64;
       magnification = true;
+      persistent-apps = [
+        "/Applications/Ghostty.app"
+        "/Applications/T3 Code (Alpha).app"
+        "/Applications/Cursor.app"
+        "/Applications/Nix Apps/Zen Browser (Beta).app"
+        "/System/Applications/Mail.app"
+        "/System/Applications/Messages.app"
+        "/Applications/Discord.app"
+        "/Applications/Slack.app"
+        "/Applications/KakaoTalk.app"
+        "/System/Applications/Calendar.app"
+        "/System/Applications/Reminders.app"
+        "/System/Applications/Notes.app"
+      ];
+      persistent-others = [
+        {
+          folder = {
+            path = "/Users/jay/Documents";
+            arrangement = "date-added";
+            displayas = "stack";
+            showas = "automatic";
+          };
+        }
+        {
+          folder = {
+            path = "/Users/jay/Developer";
+            arrangement = "name";
+            displayas = "stack";
+            showas = "automatic";
+          };
+        }
+        {
+          folder = {
+            path = "/Users/jay/Downloads";
+            arrangement = "date-added";
+            displayas = "stack";
+            showas = "automatic";
+          };
+        }
+      ];
       scroll-to-open = true;
       slow-motion-allowed = true;
       tilesize = 32;

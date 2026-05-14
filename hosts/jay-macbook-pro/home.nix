@@ -69,11 +69,8 @@
   zen-browser.enable = true;
 
   home.packages = with pkgs; [
-    bartender
-    code-cursor
     istat-menus
     skimpdf
-    slack
     spotify
     zoom-us
     zotero
