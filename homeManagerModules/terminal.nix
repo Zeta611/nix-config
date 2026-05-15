@@ -82,6 +82,9 @@
           time = {
             disabled = false;
           };
+          git_status = {
+            use_git_executable = true;
+          };
         };
       };
 
