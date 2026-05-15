@@ -69,7 +69,6 @@
   zen-browser.enable = true;
 
   home.packages = with pkgs; [
-    istat-menus
     skimpdf
     spotify
     zoom-us

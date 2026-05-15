@@ -79,6 +79,7 @@
       "ghostty"
       "google-chrome"
       "iina"
+      "istat-menus"
       "keka"
       "libreoffice"
       "microsoft-excel"
