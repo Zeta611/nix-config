@@ -72,7 +72,6 @@
     skimpdf
     spotify
     zoom-us
-    zotero
   ];
 
   xdg.enable = true;

@@ -47,9 +47,6 @@
   # https://github.com/LnL7/nix-darwin/issues/122#issuecomment-1786729187
   programs.fish.enable = true;
 
-  programs._1password.enable = true;
-  programs._1password-gui.enable = true;
-
   home-manager = {
     extraSpecialArgs = {
       inherit inputs;
@@ -70,8 +67,10 @@
     brews = [
       "mas"
       "gh"
+      "elan"
     ];
     casks = [
+      "1password"
       # "bartender"
       "cursor"
       "cyberduck"
@@ -90,6 +89,7 @@
       "tailscale-app"
       "temurin" # JDK
       "transmission"
+      "zotero"
       # AI
       "claude"
       "claude-code@latest"
@@ -112,6 +112,7 @@
       Keynote = 409183694;
       "DaVinci Resolve" = 571213070;
       "Unicorn HTTPS" = 1475628500;
+      "BandiNamer" = 6451223045;
     };
   };
 
