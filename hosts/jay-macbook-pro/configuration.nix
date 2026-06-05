@@ -63,6 +63,9 @@
       autoUpdate = true;
       cleanup = "uninstall";
       upgrade = true;
+      # Homebrew 5.1+ requires an explicit flag for `--cleanup` to run
+      # non-interactively, otherwise `brew bundle` aborts activation.
+      extraFlags = [ "--force-cleanup" ];
     };
     brews = [
       "mas"
