@@ -13,6 +13,7 @@ keybind = ctrl+shift+s>h=new_split:left
 keybind = ctrl+shift+s>j=new_split:down
 keybind = ctrl+shift+s>k=new_split:up
 keybind = ctrl+shift+s>l=new_split:right
+keybind = ctrl+shift+s>equal=equalize_splits
 
 keybind = ctrl+shift+h=goto_split:left
 keybind = ctrl+shift+j=goto_split:down

@@ -44,15 +44,13 @@
     ssh = {
       enable = true;
       enableDefaultConfig = false;
-      matchBlocks = {
+      settings = {
         "github.com" = {
-          hostname = "github.com";
-          user = "git";
-          identityFile = "~/.ssh/id_ed25519";
-          addKeysToAgent = "yes";
-          extraOptions = {
-            UseKeychain = "yes"; # macOS Keychain integration
-          };
+          HostName = "github.com";
+          User = "git";
+          IdentityFile = "~/.ssh/id_ed25519";
+          AddKeysToAgent = "yes";
+          UseKeychain = "yes"; # macOS Keychain integration
         };
       };
     };
