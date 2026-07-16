@@ -64,6 +64,7 @@
         '';
         interactiveShellInit = ''
           direnv hook fish | source
+          # Local secrets (not in git). See secrets.fish.example.
           if test -f $XDG_CONFIG_HOME/fish/secrets.fish
               source $XDG_CONFIG_HOME/fish/secrets.fish
           end
@@ -150,6 +151,8 @@
 
     xdg.configFile = {
       "fish/themes/tokyonight_day.theme".text = builtins.readFile ./fish_tokyonight_day.theme;
+      # Example only — copy to secrets.fish (gitignored / local) and fill in values.
+      "fish/secrets.fish.example".source = ./secrets.fish.example;
       "lazygit/config.yml".text = builtins.readFile ./lazygit_tokyonight_day.yml;
       "wezterm/colors/tokyonight_day.toml".text = builtins.readFile ./wezterm_tokyonight_day.toml;
       "wezterm/wezterm.lua".source =
