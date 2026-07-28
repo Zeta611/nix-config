@@ -124,12 +124,6 @@
           };
         };
         pins = {
-          "T3 Chat" = {
-            id = "7C56D7DC-0F8C-4BE2-A17C-52C3068179DA";
-            url = "https://t3.chat";
-            isEssential = true;
-            position = 104;
-          };
           "Overleaf" = {
             id = "BB168C79-0B6B-4896-BED1-93BEAA88154D";
             url = "https://overleaf.com";

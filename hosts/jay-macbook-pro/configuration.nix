@@ -98,7 +98,6 @@
       "claude-code@latest"
       "cmux"
       "codex"
-      "t3-code"
       "wispr-flow"
       # Fonts
       "font-alegreya"
