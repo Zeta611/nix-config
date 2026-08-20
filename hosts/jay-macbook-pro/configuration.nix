@@ -74,6 +74,7 @@
     ];
     casks = [
       "1password"
+      "adobe-acrobat-pro"
       # "bartender"
       "cursor"
       "cyberduck"
@@ -85,6 +86,7 @@
       "keka"
       "libreoffice"
       "microsoft-excel"
+      "nordvpn"
       "obs"
       "okta-verify"
       "raycast"
