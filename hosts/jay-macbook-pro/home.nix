@@ -34,7 +34,7 @@
       };
       settings = {
         user.name = "Jay Lee";
-        user.email = "jaeho.lee@snu.ac.kr";
+        user.email = "jay.lee@berkeley.edu";
         commit.gpgsign = true;
         init.defaultBranch = "main";
         gpg.format = "ssh";
@@ -74,10 +74,10 @@
 
   xdg.enable = true;
   # :NOTE: Temporary until full migration of homebrew
-  xdg.configFile = {
-    "ghostty/config".source =
-      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix/homeManagerModules/ghostty_config";
-  };
+  # xdg.configFile = {
+  #   "ghostty/config".source =
+  #     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix/homeManagerModules/ghostty_config";
+  # };
 
   programs.home-manager.enable = true;
 }

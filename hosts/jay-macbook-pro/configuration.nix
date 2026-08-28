@@ -79,7 +79,7 @@
       "cursor"
       "cyberduck"
       "discord"
-      "ghostty"
+      # "ghostty"
       "google-chrome"
       "iina"
       "istat-menus"
@@ -88,7 +88,7 @@
       "microsoft-excel"
       "nordvpn"
       "obs"
-      "okta-verify"
+      # "okta-verify"
       "raycast"
       "slack"
       "tailscale-app"
@@ -115,8 +115,8 @@
       Amphetamine = 937984704;
       KakaoTalk = 869223134;
       Keynote = 409183694;
-      "DaVinci Resolve" = 571213070;
-      "Unicorn HTTPS" = 1475628500;
+      # "DaVinci Resolve" = 571213070;
+      # "Unicorn HTTPS" = 1475628500;
       "BandiNamer" = 6451223045;
     };
   };
@@ -137,8 +137,7 @@
       largesize = 64;
       magnification = true;
       persistent-apps = [
-        "/Applications/Ghostty.app"
-        "/Applications/T3 Code (Alpha).app"
+        "/Applications/cmux.app"
         "/Applications/Cursor.app"
         "/Applications/Nix Apps/Zen Browser (Beta).app"
         "/System/Applications/Mail.app"
@@ -149,20 +148,21 @@
         "/System/Applications/Calendar.app"
         "/System/Applications/Reminders.app"
         "/System/Applications/Notes.app"
+        "/System/Applications/Maps.app"
       ];
       persistent-others = [
         {
           folder = {
-            path = "/Users/jay/Documents";
-            arrangement = "date-added";
+            path = "/Users/jay/Developer";
+            arrangement = "name";
             displayas = "stack";
             showas = "automatic";
           };
         }
         {
           folder = {
-            path = "/Users/jay/Developer";
-            arrangement = "name";
+            path = "/Users/jay/Documents";
+            arrangement = "date-added";
             displayas = "stack";
             showas = "automatic";
           };
