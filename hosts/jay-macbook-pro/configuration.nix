@@ -114,7 +114,7 @@
     masApps = {
       Amphetamine = 937984704;
       KakaoTalk = 869223134;
-      Keynote = 409183694;
+      # Keynote = 409183694;
       # "DaVinci Resolve" = 571213070;
       # "Unicorn HTTPS" = 1475628500;
       "BandiNamer" = 6451223045;
