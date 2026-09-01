@@ -7,7 +7,7 @@ local window_decorations
 if hostname == "jay-nixos" then
 	font_size = 12.0
 	window_decorations = "NONE"
-elseif hostname == "jay-macbook" then
+elseif hostname == "jay-macbook" or hostname == "jay-macbook-old" then
 	font_size = 15.0
 	window_decorations = "NONE"
 else

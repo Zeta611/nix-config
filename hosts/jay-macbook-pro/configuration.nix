@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  hostName,
   ...
 }:
 
@@ -8,6 +9,8 @@
   imports = [ inputs.home-manager.darwinModules.default ];
 
   system.primaryUser = "jay";
+
+  networking.hostName = hostName;
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
@@ -50,7 +53,7 @@
   home-manager = {
     extraSpecialArgs = {
       inherit inputs;
-      hostName = "jay-macbook";
+      inherit hostName;
     };
     users = {
       "jay" = import ./home.nix;

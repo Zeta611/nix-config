@@ -63,7 +63,19 @@
 
       darwinConfigurations = {
         "jay-macbook" = nix-darwin.lib.darwinSystem {
-          specialArgs = { inherit inputs; };
+          specialArgs = {
+            inherit inputs;
+            hostName = "jay-macbook";
+          };
+          modules = [
+            ./hosts/jay-macbook-pro/configuration.nix
+          ];
+        };
+        "jay-macbook-old" = nix-darwin.lib.darwinSystem {
+          specialArgs = {
+            inherit inputs;
+            hostName = "jay-macbook-old";
+          };
           modules = [
             ./hosts/jay-macbook-pro/configuration.nix
           ];
@@ -71,6 +83,6 @@
       };
 
       # Expose the package set, including overlays, for convenience.
-      darwinPackages = self.darwinConfigurations."jay-macbook".pkgs;
+      darwinPackages = self.darwinConfigurations."jay-macbook-old".pkgs;
     };
 }

@@ -145,6 +145,8 @@
       nerd-fonts.jetbrains-mono
       nixfmt
       nodejs
+      opam
+      llvm
       bison
       flex
     ];
