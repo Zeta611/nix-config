@@ -82,6 +82,8 @@
       "1password"
       "adobe-acrobat-pro"
       # "bartender"
+      "thaw"
+      "vorssaint"
       "cursor"
       "cyberduck"
       "discord"
