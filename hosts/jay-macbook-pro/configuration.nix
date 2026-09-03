@@ -18,6 +18,9 @@
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.beta
     pkgs.mysides
     pkgs.vim
+    pkgs.colima
+    pkgs.docker-client
+    pkgs.docker-compose
   ];
   environment.shells = [ pkgs.fish ];
 

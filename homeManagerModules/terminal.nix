@@ -146,7 +146,6 @@
       nixfmt
       nodejs
       opam
-      llvm
       bison
       flex
     ];
