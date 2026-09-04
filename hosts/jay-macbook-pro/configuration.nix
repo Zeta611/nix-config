@@ -104,6 +104,7 @@
       "transmission"
       "zotero"
       # AI
+      "grammarly-desktop"
       "claude"
       "claude-code@latest"
       "cmux"
