@@ -81,7 +81,7 @@
     casks = [
       "1password"
       "adobe-acrobat-pro"
-      # "bartender"
+      "monitorcontrol"
       "thaw"
       "vorssaint"
       "cursor"
@@ -122,6 +122,7 @@
     masApps = {
       Amphetamine = 937984704;
       KakaoTalk = 869223134;
+      Xcode = 497799835;
       # Keynote = 409183694;
       # "DaVinci Resolve" = 571213070;
       # "Unicorn HTTPS" = 1475628500;
