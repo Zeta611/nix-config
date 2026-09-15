@@ -80,6 +80,7 @@
     ];
     casks = [
       "1password"
+      "bitwarden"
       "adobe-acrobat-pro"
       "monitorcontrol"
       "thaw"
@@ -96,6 +97,7 @@
       "microsoft-excel"
       "nordvpn"
       "obs"
+      "zoom"
       # "okta-verify"
       "raycast"
       "slack"
