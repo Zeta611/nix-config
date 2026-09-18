@@ -21,6 +21,36 @@
         };
         vim.additionalRuntimePaths = ["~/.config/nvim"];
 
+        vim.fzf-lua.enable = true;
+        vim.extraPackages = with pkgs; [ fd ripgrep ];
+        # NVF uses Space as the default leader. :FzfLua lists all pickers.
+        vim.keymaps = [
+          {
+            key = "<leader>ff";
+            mode = "n";
+            action = "<cmd>FzfLua files<CR>";
+            desc = "Find files";
+          }
+          {
+            key = "<leader>fg";
+            mode = "n";
+            action = "<cmd>FzfLua live_grep<CR>";
+            desc = "Search file contents";
+          }
+          {
+            key = "<leader>fb";
+            mode = "n";
+            action = "<cmd>FzfLua buffers<CR>";
+            desc = "Find buffers";
+          }
+          {
+            key = "<leader>fr";
+            mode = "n";
+            action = "<cmd>FzfLua oldfiles<CR>";
+            desc = "Find recent files";
+          }
+        ];
+
         # Disable automatic indentation in LaTeX buffers; indent manually.
         # The built-in indent/tex.vim sets indentexpr=GetTeXIndent() and adds
         # { [ ( to indentkeys, which re-indents on an opening brace and after
