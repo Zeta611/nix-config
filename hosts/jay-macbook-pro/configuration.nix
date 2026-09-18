@@ -101,6 +101,7 @@
       # "okta-verify"
       "raycast"
       "slack"
+      "spotify"
       "tailscale-app"
       "temurin" # JDK
       "transmission"
