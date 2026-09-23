@@ -1,0 +1,12 @@
+{
+  "$schema": "https://raw.githubusercontent.com/manaflow-ai/cmux/main/web/data/cmux.schema.json",
+  "schemaVersion": 1,
+  "shortcuts": {
+    "bindings": {
+      "resize-pane-left": null,
+      "resize-pane-down": null,
+      "resize-pane-up": null,
+      "resize-pane-right": null
+    }
+  }
+}

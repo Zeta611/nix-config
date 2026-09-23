@@ -77,6 +77,8 @@
   xdg.configFile = {
     "ghostty/config".source =
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix/homeManagerModules/ghostty_config";
+    "cmux/cmux.json".source =
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix/homeManagerModules/cmux_config";
   };
 
   programs.home-manager.enable = true;
