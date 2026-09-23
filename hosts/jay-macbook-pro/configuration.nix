@@ -88,6 +88,7 @@
       "cursor"
       "cyberduck"
       "discord"
+      "skim"
       # "ghostty"
       "google-chrome"
       "iina"
