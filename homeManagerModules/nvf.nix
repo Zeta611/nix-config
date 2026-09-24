@@ -26,6 +26,12 @@
         # NVF uses Space as the default leader. :FzfLua lists all pickers.
         vim.keymaps = [
           {
+            key = "<leader>nd";
+            mode = "n";
+            action = "<cmd>lua vim.api.nvim_put({os.date('%Y-%m-%d')}, 'c', true, true)<CR>";
+            desc = "Insert today's date";
+          }
+          {
             key = "<leader>ff";
             mode = "n";
             action = "<cmd>FzfLua files<CR>";
