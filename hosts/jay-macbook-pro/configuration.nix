@@ -89,6 +89,7 @@
       "cyberduck"
       "discord"
       "skim"
+      "autodesk-fusion"
       # "ghostty"
       "google-chrome"
       "iina"
