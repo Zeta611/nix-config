@@ -129,7 +129,7 @@
       Amphetamine = 937984704;
       KakaoTalk = 869223134;
       Xcode = 497799835;
-      # Keynote = 409183694;
+      Keynote = 361285480;
       # "DaVinci Resolve" = 571213070;
       # "Unicorn HTTPS" = 1475628500;
       "BandiNamer" = 6451223045;
