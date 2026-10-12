@@ -90,6 +90,7 @@
       "discord"
       "skim"
       "autodesk-fusion"
+      "arduino-ide"
       # "ghostty"
       "google-chrome"
       "iina"
