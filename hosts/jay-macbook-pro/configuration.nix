@@ -92,6 +92,7 @@
       "autodesk-fusion"
       "arduino-ide"
       # "ghostty"
+      "philips-hue-sync"
       "google-chrome"
       "iina"
       "istat-menus"
