@@ -91,6 +91,8 @@
       "skim"
       "autodesk-fusion"
       "arduino-ide"
+      "fantastical"
+      "thunderbird"
       # "ghostty"
       "philips-hue-sync"
       "google-chrome"
