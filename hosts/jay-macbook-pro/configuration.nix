@@ -155,10 +155,10 @@
       largesize = 64;
       magnification = true;
       persistent-apps = [
+        "/Applications/Fantastical.app"
         "/Applications/cmux.app"
-        "/Applications/Cursor.app"
         "/Applications/Nix Apps/Zen Browser (Beta).app"
-        "/System/Applications/Mail.app"
+        "/Applications/Thunderbird.app"
         "/System/Applications/Messages.app"
         "/Applications/Discord.app"
         "/Applications/Slack.app"
@@ -166,7 +166,7 @@
         "/System/Applications/Calendar.app"
         "/System/Applications/Reminders.app"
         "/System/Applications/Notes.app"
-        "/System/Applications/Maps.app"
+        "/Applications/Zotero.app"
       ];
       persistent-others = [
         {

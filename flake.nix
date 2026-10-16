@@ -10,7 +10,8 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      # Zen's Darwin module still reads enableGnomeExtensions, removed in newer HM.
+      url = "github:nix-community/home-manager/e7bd3791674bf887165be17bc3549552c7bd1c92";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
