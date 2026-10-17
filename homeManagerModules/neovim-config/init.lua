@@ -7,6 +7,12 @@ vim.cmd.colorscheme("catppuccin-latte")
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
+-- Let cmux's file explorer open files in the first running Neovim instance.
+if vim.env.CMUX_WORKSPACE_ID then
+  vim.fn.mkdir(vim.fn.stdpath("cache"), "p")
+  pcall(vim.fn.serverstart, vim.fn.stdpath("cache") .. "/cmux.sock")
+end
+
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.expandtab = true

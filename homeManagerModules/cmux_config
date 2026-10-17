@@ -8,5 +8,11 @@
       "resize-pane-up": null,
       "resize-pane-right": null
     }
+  },
+  "app": {
+    "preferredEditor": "$HOME/.nix-profile/bin/cmux-nvim-open"
+  },
+  "fileExplorer": {
+    "doubleClickAction": "preferredEditor"
   }
 }

@@ -9,6 +9,11 @@
   options.neovim.enable = lib.mkEnableOption "enable Neovim";
 
   config = lib.mkIf config.neovim.enable {
+    home.packages = [
+      (pkgs.writeShellScriptBin "cmux-nvim-open"
+        (builtins.readFile ./neovim-config/cmux-nvim-open))
+    ];
+
     programs.neovim = {
       enable = true;
       viAlias = false;

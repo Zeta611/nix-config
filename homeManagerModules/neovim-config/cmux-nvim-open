@@ -1,0 +1,7 @@
+#!/bin/sh
+set -eu
+nvim="$HOME/.nix-profile/bin/nvim"
+socket="${XDG_CACHE_HOME:-$HOME/.cache}/nvim/cmux.sock"
+# Check the server first: --remote alone starts an editor if it cannot connect.
+"$nvim" --server "$socket" --remote-expr '1' >/dev/null
+exec "$nvim" --server "$socket" --remote "$@"
