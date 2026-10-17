@@ -32,10 +32,6 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    nvf = {
-      url = "github:NotAShelf/nvf";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =

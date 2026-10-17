@@ -1,5 +1,5 @@
 command = ~/.nix-profile/bin/fish --login --interactive
-theme = TokyoNight Day
+theme = Catppuccin Latte
 font-size = 16
 
 macos-option-as-alt = true

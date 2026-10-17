@@ -43,8 +43,7 @@
   git.enable = true;
   hyprland.enable = true;
   dolphin.enable = true;
-  neovim.enable = false;
-  nvf.enable = true;
+  neovim.enable = true;
   libreoffice.enable = true;
   rclone.enable = true;
   unison.enable = true;

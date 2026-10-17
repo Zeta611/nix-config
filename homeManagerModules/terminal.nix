@@ -50,7 +50,7 @@
           fish_add_path $HOME/.local/bin
           fish_add_path $HOME/.npm-global/bin
 
-          fish_config theme choose tokyonight_day
+          fish_config theme choose catppuccin-latte
 
           if test -d /opt/homebrew
             fish_add_path -a /opt/homebrew/bin
@@ -95,18 +95,10 @@
       bat = {
         enable = true;
         config = {
-          theme = "tokyonight_day";
+          theme = "Catppuccin Latte";
         };
-        themes = {
-          tokyonight_day = {
-            src = pkgs.fetchFromGitHub {
-              owner = "folke";
-              repo = "tokyonight.nvim";
-              rev = "c2725eb6d086c8c9624456d734bd365194660017";
-              sha256 = "sha256-vKXlFHzga9DihzDn+v+j3pMNDfvhYHcCT8GpPs0Uxgg=";
-            };
-            file = "extras/sublime/tokyonight_day.tmTheme";
-          };
+        themes."Catppuccin Latte" = {
+          src = ./bat_catppuccin_latte.tmTheme;
         };
       };
       fd.enable = true;
@@ -117,22 +109,12 @@
           "--layout=reverse"
           "--border=none"
           "--ansi"
-          "--color=bg+:#b7c1e3"
-          "--color=bg:#d0d5e3"
-          "--color=border:#4094a3"
-          "--color=fg:#3760bf"
-          "--color=gutter:#d0d5e3"
-          "--color=header:#b15c00"
-          "--color=hl+:#188092"
-          "--color=hl:#188092"
-          "--color=info:#8990b3"
-          "--color=marker:#d20065"
-          "--color=pointer:#d20065"
-          "--color=prompt:#188092"
-          "--color=query:#3760bf:regular"
-          "--color=scrollbar:#4094a3"
-          "--color=separator:#b15c00"
-          "--color=spinner:#d20065"
+          # https://github.com/catppuccin/fzf
+          "--color=bg+:#ccd0da,bg:#eff1f5,spinner:#dc8a78,hl:#d20f39"
+          "--color=fg:#4c4f69,header:#d20f39,info:#8839ef,pointer:#dc8a78"
+          "--color=marker:#7287fd,fg+:#4c4f69,prompt:#8839ef,hl+:#d20f39"
+          "--color=selected-bg:#bcc0cc"
+          "--color=border:#9ca0b0,label:#4c4f69"
         ];
       };
       ripgrep.enable = true;
@@ -151,11 +133,10 @@
     ];
 
     xdg.configFile = {
-      "fish/themes/tokyonight_day.theme".text = builtins.readFile ./fish_tokyonight_day.theme;
+      "fish/themes/catppuccin-latte.theme".text = builtins.readFile ./fish_catppuccin_latte.theme;
       # Example only — copy to secrets.fish (gitignored / local) and fill in values.
       "fish/secrets.fish.example".source = ./secrets.fish.example;
-      "lazygit/config.yml".text = builtins.readFile ./lazygit_tokyonight_day.yml;
-      "wezterm/colors/tokyonight_day.toml".text = builtins.readFile ./wezterm_tokyonight_day.toml;
+      "lazygit/config.yml".text = builtins.readFile ./lazygit_catppuccin_latte.yml;
       "wezterm/wezterm.lua".source =
         config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix/homeManagerModules/wezterm.lua";
     };

@@ -1,0 +1,2 @@
+WRN 2026-10-17T02:34:50.876 ?.73701    server_start:197: Failed to start server: operation not permitted: /var/folders/jk/rc0x_hxx6q10wybjwk3t6lwc0000gn/T/nvim.jay/wMBP0d/nvim.73701.0
+WRN 2026-10-17T02:37:23.745 ?.73929    server_start:197: Failed to start server: operation not permitted: /var/folders/jk/rc0x_hxx6q10wybjwk3t6lwc0000gn/T/nvim.jay/0AcZBb/nvim.73929.0

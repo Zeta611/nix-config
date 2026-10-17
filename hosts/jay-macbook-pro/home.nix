@@ -63,10 +63,11 @@
   aerospace.enable = true;
   sketchybar.enable = false;
   texlive.enable = true;
-  nvf.enable = true;
+  neovim.enable = true;
   zen-browser.enable = true;
 
   home.packages = with pkgs; [
+    uv
     skimpdf
     spotify
     zoom-us
