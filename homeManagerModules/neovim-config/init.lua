@@ -25,6 +25,8 @@ for _, dir in ipairs({ "h", "j", "k", "l" }) do
   vim.keymap.set("n", "<C-" .. dir .. ">", "<C-w>" .. dir)
 end
 
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename symbol" })
+
 vim.keymap.set("n", "<leader>nd", function()
   vim.api.nvim_put({ os.date("%Y-%m-%d") }, "c", true, true)
 end, { desc = "Insert today's date" })
