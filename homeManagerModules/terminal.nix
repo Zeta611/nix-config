@@ -48,6 +48,7 @@
         };
         shellInit = ''
           fish_add_path $HOME/.local/bin
+          fish_add_path $HOME/.cargo/bin
           fish_add_path $HOME/.npm-global/bin
 
           fish_config theme choose catppuccin-latte
@@ -127,6 +128,7 @@
       nerd-fonts.jetbrains-mono
       nixfmt
       nodejs
+      pnpm
       opam
       bison
       flex

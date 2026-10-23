@@ -30,8 +30,11 @@
         ruff
         # Lua
         lua-language-server
+        # Web
         # Elm
         elmPackages.elm-language-server
+        # JS, TS, HTML, CSS, etc.
+        biome
       ];
     };
 

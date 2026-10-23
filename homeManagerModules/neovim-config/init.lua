@@ -17,7 +17,8 @@ vim.o.number = true
 vim.o.relativenumber = true
 vim.o.expandtab = true
 vim.o.tabstop = 8
-vim.o.shiftwidth = 8
+vim.o.shiftwidth = 4
+vim.o.softtabstop = 4
 vim.o.termguicolors = true
 vim.o.smartindent = true
 
@@ -65,8 +66,9 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
 })
 
+-- tab = 2 languages
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "lua",
+  pattern = { "lua", "html", "javascript", "typescript" },
   callback = function()
     vim.bo.shiftwidth = 2
     vim.bo.softtabstop = 2
@@ -104,5 +106,8 @@ vim.lsp.config('lua_ls', {
 vim.lsp.enable('lua_ls')
 -- Python
 vim.lsp.enable({ 'pyrefly', 'ruff' })
+-- Web
 -- Elm
 vim.lsp.enable('elmls')
+-- JS, TS, HTML, CSS, etc.
+vim.lsp.enable('biome')
