@@ -25,7 +25,17 @@ for _, dir in ipairs({ "h", "j", "k", "l" }) do
   vim.keymap.set("n", "<C-" .. dir .. ">", "<C-w>" .. dir)
 end
 
-vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename symbol" })
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename symbol" })
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
+vim.keymap.set("n", "<leader>cl", "<cmd>checkhealth vim.lsp<cr>", { desc = "Check LSP health" })
+
+for _, key in ipairs({ "<C-n>", "<C-p>" }) do
+  vim.keymap.set("i", key, function()
+    -- if already open, use the key; otherwise, open omnicomplete suggestions
+    return vim.fn.pumvisible() == 1 and key or "<C-x><C-o>"
+  end, { expr = true, desc = "Omni completion" })
+end
 
 vim.keymap.set("n", "<leader>nd", function()
   vim.api.nvim_put({ os.date("%Y-%m-%d") }, "c", true, true)
