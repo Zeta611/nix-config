@@ -30,6 +30,8 @@
         ruff
         # Lua
         lua-language-server
+        # Elm
+        elmPackages.elm-language-server
       ];
     };
 

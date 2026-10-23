@@ -90,6 +90,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.pack.add {
   { src = 'https://github.com/neovim/nvim-lspconfig' },
 }
+-- Lua
 vim.lsp.config('lua_ls', {
   settings = {
     Lua = {
@@ -101,4 +102,7 @@ vim.lsp.config('lua_ls', {
   },
 })
 vim.lsp.enable('lua_ls')
+-- Python
 vim.lsp.enable({ 'pyrefly', 'ruff' })
+-- Elm
+vim.lsp.enable('elmls')
