@@ -35,6 +35,8 @@
         elmPackages.elm-language-server
         # JS, TS, HTML, CSS, etc.
         biome
+        # Rust
+        rust-analyzer
       ];
     };
 

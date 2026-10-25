@@ -111,3 +111,5 @@ vim.lsp.enable({ 'pyrefly', 'ruff' })
 vim.lsp.enable('elmls')
 -- JS, TS, HTML, CSS, etc.
 vim.lsp.enable('biome')
+-- Rust
+vim.lsp.enable('rust_analyzer')
