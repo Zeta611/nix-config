@@ -6,7 +6,7 @@ macos-option-as-alt = true
 macos-icon = holographic
 
 mouse-hide-while-typing = true
-quit-after-last-window-closed = true
+quit-after-last-window-closed = false
 macos-titlebar-style = tabs
 
 keybind = ctrl+shift+s>h=new_split:left

@@ -211,7 +211,7 @@ alt-shift-l = ['join-with right', 'mode main']
 
 [[on-window-detected]]
 if.app-id = "com.mitchellh.ghostty"
-run = ["layout floating"]
+run = ["layout tiling"]
 
 [[on-window-detected]]
 if.app-id = "com.kakao.KakaoTalkMac"
