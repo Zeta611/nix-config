@@ -62,6 +62,7 @@
   direnv.enable = true;
   aerospace.enable = true;
   sketchybar.enable = false;
+  ghostty.enable = true;
   texlive.enable = true;
   neovim.enable = true;
   zen-browser.enable = true;
