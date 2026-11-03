@@ -221,7 +221,16 @@
       TrackpadThreeFingerDrag = true;
     };
     CustomUserPreferences."com.apple.symbolichotkeys".AppleSymbolicHotKeys = {
-      "64".enabled = false; # disable cmd+space for Spotlight Search
+       # Spotlight
+      "64" = {
+        enabled = true;
+        value = {
+          # opt+space = space (ASCII 32, virtual keycode 49) opt (0x80000 = 524288)
+          parameters = [32 49 524288];
+          type = "standard";
+        };
+      };
+      # Next input source
       "61" = {
         enabled = true;
         value = {
