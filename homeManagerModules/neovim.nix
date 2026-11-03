@@ -41,13 +41,20 @@
     };
 
     # Editable Lua files; Neovim loads init.lua through its normal startup.
-    xdg.configFile = {
-      "nvim/init.lua".source =
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix/homeManagerModules/neovim-config/init.lua";
-      "nvim/plugin/fzf.lua".source =
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix/homeManagerModules/neovim-config/plugin/fzf.lua";
-      "nvim/plugin/overleaf-autosync.lua".source =
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix/homeManagerModules/neovim-config/plugin/overleaf-autosync.lua";
-    };
+    xdg.configFile =
+      let
+        link =
+          path:
+          config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix/homeManagerModules/neovim-config/${path}";
+        pluginFiles = lib.filterAttrs (
+          name: type: type == "regular" && lib.hasSuffix ".lua" name
+        ) (builtins.readDir ./neovim-config/plugin);
+      in
+      {
+        "nvim/init.lua".source = link "init.lua";
+      }
+      // lib.mapAttrs' (
+        name: _: lib.nameValuePair "nvim/plugin/${name}" { source = link "plugin/${name}"; }
+      ) pluginFiles;
   };
 }
