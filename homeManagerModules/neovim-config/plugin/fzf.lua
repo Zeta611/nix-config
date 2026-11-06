@@ -8,7 +8,7 @@ local map = function(key, action, desc)
   vim.keymap.set("n", key, action, { desc = desc })
 end
 map("<leader><space>", fzf.files, "Find files")
-map("<leader>g", fzf.live_grep, "Live grep")
+map("<leader>/", fzf.live_grep, "Live grep")
 map("<leader>b", fzf.buffers, "List buffers")
 map("<leader>fr", fzf.oldfiles, "Find recent files")
 map("<leader>fn", function()

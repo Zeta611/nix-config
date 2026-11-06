@@ -112,5 +112,6 @@ vim.lsp.enable('elmls')
 -- JS, TS, HTML, CSS, etc.
 vim.lsp.enable('tsc')
 vim.lsp.enable('biome')
+vim.lsp.enable('svelte')
 -- Rust
 vim.lsp.enable('rust_analyzer')
