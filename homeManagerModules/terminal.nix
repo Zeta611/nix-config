@@ -90,6 +90,22 @@
         };
       };
 
+      zsh = {
+        enable = true;
+        enableCompletion = true;
+        dotDir = config.home.homeDirectory;
+        profileExtra = lib.optionalString pkgs.stdenv.hostPlatform.isDarwin ''
+          eval "$(/opt/homebrew/bin/brew shellenv zsh)"
+        '';
+        initContent = ''
+          if [[ -o interactive && -t 0 && -z "$CLAUDECODE" && -z "$NO_FISH" ]] \
+            && [[ "$(ps -o comm= -p $PPID)" != *fish ]] \
+            && command -v fish >/dev/null; then
+            exec fish -l
+          fi
+        '';
+      };
+
       eza.enable = true;
 
       zoxide.enable = true;
