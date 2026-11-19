@@ -68,7 +68,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 -- tab = 2 languages
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "lua", "html", "javascript", "typescript" },
+  pattern = { "lua", "html", "javascript", "typescript", "svelte" },
   callback = function()
     vim.bo.shiftwidth = 2
     vim.bo.softtabstop = 2
@@ -115,3 +115,21 @@ vim.lsp.enable('biome')
 vim.lsp.enable('svelte')
 -- Rust
 vim.lsp.enable('rust_analyzer')
+
+-- Syntax highlighting via Treesitter
+vim.pack.add({
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+})
+
+require("nvim-treesitter")
+    .install({ "svelte", "html", "css", "javascript", "typescript", "tsx" })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "svelte", "html", "css", "javascript", "typescript", "typescriptreact", "javascriptreact" },
+  callback = function(args)
+    local lang = vim.treesitter.language.get_lang(args.match)
+    if lang and vim.treesitter.language.add(lang) then
+      vim.treesitter.start(args.buf, lang)
+    end
+  end,
+})

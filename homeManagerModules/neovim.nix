@@ -25,6 +25,8 @@
         fd
         ripgrep
         fzf
+        # Treesitter
+        tree-sitter
         # Python
         pyrefly
         ruff
