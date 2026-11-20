@@ -3,7 +3,26 @@ vim.pack.add({
 })
 
 local fzf = require("fzf-lua")
-fzf.setup({})
+local excludes = { ".git", ".jj", "node_modules", ".DS_Store" }
+
+local fd_opts = "--color=never --type f --type l"
+local rg_globs = ""
+for _, e in ipairs(excludes) do
+  fd_opts = fd_opts .. " --exclude " .. e
+  rg_globs = rg_globs .. ' -g "!' .. e .. '"'
+end
+
+fzf.setup({
+  files = {
+    fd_opts = fd_opts,
+    rg_opts = "--color=never --files" .. rg_globs, -- fallback if fd is missing
+  },
+  grep = {
+    rg_opts = "--column --line-number --no-heading --color=always --smart-case "
+        .. "--max-columns=4096" .. rg_globs .. " -e",
+  },
+})
+
 local map = function(key, action, desc)
   vim.keymap.set("n", key, action, { desc = desc })
 end
