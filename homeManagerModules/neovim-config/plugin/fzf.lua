@@ -3,7 +3,7 @@ vim.pack.add({
 })
 
 local fzf = require("fzf-lua")
-local excludes = { ".git", ".jj", "node_modules", ".DS_Store" }
+local excludes = { ".git", ".jj", "node_modules", ".DS_Store", ".hai" }
 
 local fd_opts = "--color=never --type f --type l"
 local rg_globs = ""
