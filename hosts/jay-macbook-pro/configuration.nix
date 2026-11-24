@@ -81,6 +81,7 @@
     casks = [
       "1password"
       "bitwarden"
+      "blender"
       "adobe-acrobat-pro"
       "monitorcontrol"
       "thaw"
